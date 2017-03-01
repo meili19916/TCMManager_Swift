@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.0.1)
+  - EZSwiftExtensions (1.7)
   - Kingfisher (3.2.0)
   - MBProgressHUD (1.0.0)
   - SQLite.swift (0.11.0):
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0.1)
+  - EZSwiftExtensions (~> 1.7)
   - Kingfisher (~> 3.2.0)
   - MBProgressHUD (~> 1.0.0)
   - SQLite.swift (~> 0.11.0)
@@ -16,11 +18,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  EZSwiftExtensions: 4afef248066a036903d8496bf07bc355b22ce766
   Kingfisher: 50407d1d5dbc34965009d425a286342ff36a84ea
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SQLite.swift: 9a26273607d3077a2e5a8d33486e9989f8404c7d
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 6fcf32c6a297eaddef31cf02eb84792897111037
+PODFILE CHECKSUM: f9e3c62c63f5e892263d04003960ddc7c5a2b128
 
 COCOAPODS: 1.2.0.beta.1

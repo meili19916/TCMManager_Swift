@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EZSwiftExtensions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1A9278271A149F3359913F8F01556397</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51E6CDFDE1929803E201E13CA57D1CA7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7EB383EAF5342376D602981A44DFA913</key>
+		<key>74837635E1F934B86B547CAE776991C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>93DE805812A24767B71088B073693F0E</key>
+		<key>973F3ABD49922CF6C301ACDFAEC31BF2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6C1517DA001CFBE8BC935F35BC20871</key>
 		<dict>
 			<key>primary</key>
 			<true/>

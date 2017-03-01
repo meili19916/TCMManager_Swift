@@ -7,4 +7,5 @@ target 'TCMManager_Swift' do
     pod 'SwiftyJSON', '~> 3.1.1'
     pod 'Kingfisher', '~> 3.2.0'	
     pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'EZSwiftExtensions', '~> 1.7'
 end
