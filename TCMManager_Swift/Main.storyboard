@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="y73-RM-cEG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--我-->
+        <scene sceneID="tGC-5F-lLR">
+            <objects>
+                <viewController storyboardIdentifier="PersonalMainViewController" id="mvA-gl-YcJ" customClass="MineViewController" customModule="TCMManager_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ddI-ma-34V"/>
+                        <viewControllerLayoutGuide type="bottom" id="p9g-1A-yZq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hYD-1g-1bh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94509803921568625" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我" image="personal" id="9Pq-54-Aik"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Td3-PY-MfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1698" y="-171"/>
+        </scene>
+        <!--工作室-->
+        <scene sceneID="XV9-tn-65R">
+            <objects>
+                <viewController id="oi9-H8-YuC" customClass="WorkStudioViewController" customModule="TCMManager_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ugd-Ps-xx1"/>
+                        <viewControllerLayoutGuide type="bottom" id="6zs-tH-LiN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ACO-bT-KuT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="工作室" image="conmmunicate" id="7Rv-xs-8X2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oph-qY-Jv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1698" y="-929"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="ddZ-Dq-qpw">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y73-RM-cEG" customClass="MainTabBarController" customModule="TCMManager_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="8VL-Tj-TZN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.95564913749694824" green="0.95562052726745605" blue="0.95563679933547974" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.1450980392" green="0.73333333329999995" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.14509803921568629" green="0.73333333333333328" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="oi9-H8-YuC" kind="relationship" relationship="viewControllers" id="YHv-AB-P3O"/>
+                        <segue destination="6yT-FA-agn" kind="relationship" relationship="viewControllers" id="Et7-sv-K5b"/>
+                        <segue destination="gIQ-EA-pF5" kind="relationship" relationship="viewControllers" id="hJy-Pl-7dD"/>
+                        <segue destination="mvA-gl-YcJ" kind="relationship" relationship="viewControllers" id="VRT-Fd-Ou6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdP-SW-M9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3855" y="-203"/>
+        </scene>
+        <!--医案-->
+        <scene sceneID="NHA-95-Jrx">
+            <objects>
+                <viewController id="gIQ-EA-pF5" customClass="MedicalRecordViewController" customModule="TCMManager_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zK5-X8-nFF"/>
+                        <viewControllerLayoutGuide type="bottom" id="TnW-a6-tnb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2fx-RL-JBb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="医案" image="medicalrecord" id="ZFs-MX-phB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fmz-lm-KCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1711" y="1490"/>
+        </scene>
+        <!--病人管理-->
+        <scene sceneID="6oK-MR-Qgr">
+            <objects>
+                <viewController id="6yT-FA-agn" customClass="PatientManagerViewController" customModule="TCMManager_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8aE-dU-F54"/>
+                        <viewControllerLayoutGuide type="bottom" id="tU2-xk-pnK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Y7-FS-IXA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="病人管理" image="patient" id="cih-bc-SpT">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2d-ld-7Dm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1698" y="698"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="conmmunicate" width="24" height="24"/>
+        <image name="medicalrecord" width="24" height="24"/>
+        <image name="patient" width="24" height="24"/>
+        <image name="personal" width="18" height="21"/>
+    </resources>
+</document>

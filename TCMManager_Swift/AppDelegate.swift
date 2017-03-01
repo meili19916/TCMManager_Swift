@@ -12,10 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var imageView:UIImageView?
+    var navigationVC:UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow.init(frame: UIScreen.main.bounds)
         // Override point for customization after application launch.
+        NetWorkingManager.sharedInstance.setNetWorkingStatus()
+        let luachManager = LuanchViewManager.init()
+        luachManager.resetNavigationBar(navigationVC: &navigationVC)
+        luachManager.showView(window: window!, navigationVC: navigationVC)
+        window?.makeKeyAndVisible()
         return true
     }
 
@@ -40,7 +47,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

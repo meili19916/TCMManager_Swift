@@ -1,0 +1,6 @@
+framework module Pods_TCMManager_Swift {
+  umbrella header "Pods-TCMManager_Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
