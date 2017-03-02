@@ -67,5 +67,10 @@ extension Dictionary {
         let data:Data = Data.init(bytes: result, count: Int(CC_MD5_DIGEST_LENGTH))
         return data.base64EncodedString(options: [])
     }
+}
 
+extension UIScrollView{
+    func headRefresh() -> Void {
+        
+    }
 }

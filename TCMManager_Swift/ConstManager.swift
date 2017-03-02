@@ -22,7 +22,7 @@ func IntToString(intValue:Int) -> NSString{
 let NumberVelues = "0123456789"
 
 ////默认间距
-let  ViewSpace  = 10
+let  ViewSpace:CGFloat  = 10.0
 let  HorizontalViewSpace = 15
 let  ButtonNomalHeight  = 48
 let  ButtonLitterHeight  = 35
