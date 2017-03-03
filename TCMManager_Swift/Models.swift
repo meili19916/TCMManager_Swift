@@ -8,6 +8,14 @@
 
 import Foundation
 import SwiftyJSON
+
+enum VertifyStatusType:Int {
+    case Veritifyed = 1
+    case Veritifing
+    case NoVertify
+    case Refused
+}
+
 class LoginUserModel:Mappable {
     var qrcodeUrl: String?
     var status: Int?

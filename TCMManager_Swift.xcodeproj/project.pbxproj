@@ -72,6 +72,8 @@
 		7FE7A6CA1E680F49009D5F42 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6B61E680F49009D5F42 /* UIView+MJExtension.m */; };
 		7FE7A6CC1E681A5F009D5F42 /* MineInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6CB1E681A5F009D5F42 /* MineInfoTableViewCell.swift */; };
 		7FE7A6CE1E681D81009D5F42 /* MineListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6CD1E681D81009D5F42 /* MineListTableViewCell.swift */; };
+		7FE7A6D01E691BEB009D5F42 /* MineVerityfyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6CF1E691BEB009D5F42 /* MineVerityfyTableViewCell.swift */; };
+		7FE7A6D41E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6D31E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift */; };
 		7FF0D36E1E54345000BEFC87 /* Catogry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0D36D1E54345000BEFC87 /* Catogry.swift */; };
 		7FF0D37C1E554D7900BEFC87 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0D37B1E554D7900BEFC87 /* Models.swift */; };
 		7FF620631E499BBB00AC6F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF620621E499BBB00AC6F40 /* AppDelegate.swift */; };
@@ -188,6 +190,8 @@
 		7FE7A6B61E680F49009D5F42 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		7FE7A6CB1E681A5F009D5F42 /* MineInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineInfoTableViewCell.swift; sourceTree = "<group>"; };
 		7FE7A6CD1E681D81009D5F42 /* MineListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineListTableViewCell.swift; sourceTree = "<group>"; };
+		7FE7A6CF1E691BEB009D5F42 /* MineVerityfyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineVerityfyTableViewCell.swift; sourceTree = "<group>"; };
+		7FE7A6D31E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioItemTableViewCell.swift; sourceTree = "<group>"; };
 		7FF0D36D1E54345000BEFC87 /* Catogry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catogry.swift; sourceTree = "<group>"; };
 		7FF0D3791E54442200BEFC87 /* TCMManager_Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TCMManager_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FF0D37B1E554D7900BEFC87 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -337,9 +341,8 @@
 		7FE7A6211E63D243009D5F42 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				7FE7A6D11E693BA2009D5F42 /* MineViews */,
 				7FE7A62B1E63D2FB009D5F42 /* MineViewController.swift */,
-				7FE7A6CD1E681D81009D5F42 /* MineListTableViewCell.swift */,
-				7FE7A6CB1E681A5F009D5F42 /* MineInfoTableViewCell.swift */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 		7FE7A6231E63D252009D5F42 /* WorkStudio */ = {
 			isa = PBXGroup;
 			children = (
+				7FE7A6D21E6949B1009D5F42 /* WorkStudioViews */,
 				7FE7A6291E63D2E1009D5F42 /* WorkStudioViewController.swift */,
 			);
 			name = WorkStudio;
@@ -461,6 +465,24 @@
 				7FE7A6AA1E680F49009D5F42 /* MJRefreshStateHeader.m */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		7FE7A6D11E693BA2009D5F42 /* MineViews */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7A6CF1E691BEB009D5F42 /* MineVerityfyTableViewCell.swift */,
+				7FE7A6CD1E681D81009D5F42 /* MineListTableViewCell.swift */,
+				7FE7A6CB1E681A5F009D5F42 /* MineInfoTableViewCell.swift */,
+			);
+			name = MineViews;
+			sourceTree = "<group>";
+		};
+		7FE7A6D21E6949B1009D5F42 /* WorkStudioViews */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7A6D31E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift */,
+			);
+			name = WorkStudioViews;
 			sourceTree = "<group>";
 		};
 		7FF0D36C1E54334700BEFC87 /* Catogry */ = {
@@ -797,6 +819,7 @@
 				7FE7A6051E61689D009D5F42 /* EnumTransform.swift in Sources */,
 				7FE7A60F1E61689D009D5F42 /* Mapper.swift in Sources */,
 				7FE7A6041E61689D009D5F42 /* EnumOperators.swift in Sources */,
+				7FE7A6D01E691BEB009D5F42 /* MineVerityfyTableViewCell.swift in Sources */,
 				7FE7A60A1E61689D009D5F42 /* IntegerOperators.swift in Sources */,
 				7FE7A6001E61689D009D5F42 /* DataTransform.swift in Sources */,
 				7FE7A6CC1E681A5F009D5F42 /* MineInfoTableViewCell.swift in Sources */,
@@ -806,6 +829,7 @@
 				7F9F50AE1E49CA4D0051E029 /* GuideViewController.swift in Sources */,
 				7FE7A6B91E680F49009D5F42 /* MJRefreshComponent.m in Sources */,
 				7FE7A6061E61689D009D5F42 /* FromJSON.swift in Sources */,
+				7FE7A6D41E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift in Sources */,
 				7FE7A6C71E680F49009D5F42 /* NSBundle+MJRefresh.m in Sources */,
 				7FE7A6101E61689D009D5F42 /* NSDecimalNumberTransform.swift in Sources */,
 				7FE7A60C1E61689D009D5F42 /* Map.swift in Sources */,

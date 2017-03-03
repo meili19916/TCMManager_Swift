@@ -1,22 +1,18 @@
 //
-//  MainInfoTableViewCell.swift
+//  MineVerityfyTableViewCell.swift
 //  TCMManager_Swift
 //
-//  Created by HeLijuan on 17/3/2.
+//  Created by HeLijuan on 17/3/3.
 //  Copyright © 2017年 HeLijuan. All rights reserved.
 //
 
 import UIKit
 
-class MineInfoTableViewCell: UITableViewCell {
+class MineVerityfyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var verityStatusImageView: UIImageView!
-    @IBOutlet weak var headImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.verityStatusImageView.isHidden = UserManager.sharedInstance.currentUser?.status == VertifyStatusType.Veritifyed.rawValue
         // Initialization code
     }
 
