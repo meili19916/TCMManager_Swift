@@ -15,6 +15,7 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.removeExtraFooterView()
+        self.tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
 //        self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.headRefresh))
 //        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.footerRefresh))
         // Do any additional setup after loading the view.
@@ -32,7 +33,7 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         return 1
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 100
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:WorkStudioItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ItemCell", for: indexPath) as! WorkStudioItemTableViewCell

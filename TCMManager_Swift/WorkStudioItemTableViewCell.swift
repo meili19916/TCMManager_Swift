@@ -14,7 +14,8 @@ class WorkStudioItemTableViewCell: UITableViewCell {
         // Initialization code
         for  button  in self.contentView.subviews {
             let buttom:UIButton = button as! UIButton
-            buttom.positionLabelRespectToImage(title: (buttom.titleLabel?.text)!, position: .bottom, spacing: 0)
+            buttom.imageView?.contentMode = .center
+            buttom.positionLabelRespectToImage(title: (buttom.titleLabel?.text)!, position: .bottom, spacing: 10)
         }
     }
 
