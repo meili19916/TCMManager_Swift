@@ -132,12 +132,12 @@ class RegisterModel: Mappable {
 class CourseMicroClassModel: Mappable {
 
     var sourceId: String?
-    var sourceType: String?
+    var sourceType: Int?
     var title: String?
     var createTime: Double?
     var coverImageUrl: String?
     var actionCount: Int?
-    var hnsType: String?
+    var hnsType: Int?
     var hnsContent: String?
 
     required init?(map: Map) {

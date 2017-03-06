@@ -38,7 +38,7 @@ class NetWorkingManager: NSObject {
                 "Accept-Language" : "en;q=1"
             ]
         }
-            manager?.request(url,headers:requestHeader).responseJSON(completionHandler: {
+            manager?.request(url,parameters: params,headers:requestHeader).responseJSON(completionHandler: {
                 (response) in
                 self.requestSuccessHandle(response: response, completeHandler: completeHandler)
             })
@@ -108,7 +108,7 @@ class NetWorkingManager: NSObject {
 
     func requestSuccessHandle(response:DataResponse<Any>,completeHandler:RequestCompletedClosure) -> Void {
         switch response.result {
-        case .success(let value):
+        case .success( _):
             let baseModel = JSON(data: response.data!)
             let userName = baseModel["errorCode"].intValue
             if userName == 1000 {
@@ -144,4 +144,8 @@ class NetWorkingManager: NSObject {
             return UserDefaults.standard.object(forKey: "timeSpace") as! NSString?
         }
     }
+
+
 }
+
+

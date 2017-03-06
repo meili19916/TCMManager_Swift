@@ -16,6 +16,7 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dataArray = Array.init()
         self.tableView.removeExtraFooterView()
         self.tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
 //        self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.headRefresh))
@@ -31,10 +32,10 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
 
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return section == 0 ? 2 :(self.dataArray?.count)!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -50,17 +51,20 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
             }
         }
         let cell:WorkStudioListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ListCell", for: indexPath) as! WorkStudioListTableViewCell
+        cell.titleLabel.text = dataArray?[indexPath.row].title
+        let url = URL(string: (dataArray?[indexPath.row].coverImageUrl)!)
+        cell.detailImageView.kf.setImage(with: url)
         return cell
     }
 
     func getData() -> Void {
         MBProgressHUDManager.sharedInstance.show(type:.Loading,text:nil, detailText:nil,onView: self.view)
             RequestManager.getCourseAndMicroclassList(pageIndex: 1, pageSize: 20, complete: { (result) in
-//                let array = Mapper<CourseMicroClassModel>().map(JSONString: result as! String)
-//                self.dataArray = array as! Array<CourseMicroClassModel>?
+                self.dataArray = result as! Array<CourseMicroClassModel>?
+                self.tableView.reloadData()
+                MBProgressHUDManager.sharedInstance.dissmiss()
             }) { (result) in
                 MBProgressHUDManager.sharedInstance.show(type: .Text, text: result as? String, detailText: nil, onView: self.view)
-
         }
     }
 

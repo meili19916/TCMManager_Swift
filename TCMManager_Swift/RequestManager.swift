@@ -22,8 +22,8 @@ class RequestManager: NSObject {
                 let serverTime:Int64 = JSON(data:data.1 as! Data).int64Value
                 let date:Date = Date.init()
                 let time:Int64 = Int64(date.timeIntervalSince1970)
-//                let distance:Int64 = serverTime + serverTime - time
-                UserDefaults.standard.set("1488781272", forKey: "timeSpace")
+                let distance:Int64 = serverTime + serverTime - time
+                UserDefaults.standard.set(String(distance), forKey: "timeSpace")
                 UserDefaults.standard.synchronize()
             }else{
                 if  UserDefaults.standard.object(forKey: "timeSpace") == nil{
@@ -99,19 +99,12 @@ class RequestManager: NSObject {
 
     //MARK:工作室
     static func getCourseAndMicroclassList(pageIndex:Int,pageSize:Int,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
-//        let params:Dictionary<String,Any> = ["pageIndex":String(pageIndex),"pageSize":String(pageSize),"token":UserManager.sharedInstance.currentUser?.token ?? ""]
-        let params:Dictionary<String,Any> = ["pageIndex":String(pageIndex),"pageSize":String(pageSize),"token":"c708878418fba508292244bcca1896d9fc24f557"]
+        let params:Dictionary<String,Any> = ["pageIndex":String(pageIndex),"pageSize":String(pageSize),"token":UserManager.sharedInstance.currentUser?.token ?? ""]
 
         NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/course/get-mix-list"), params: params) { (data) in
             if data.0 {
-                if !JSONSerialization.isValidJSONObject(data.1 ?? "") {
-                    print("不能转化")
-                    return
-                }
-                
-//                let json : AnyObject! = JSONSerialization.data(withJSONObject:data.1!(using: String.Encoding.utf8.rawValue)!, options: .prettyPrinted)
-//                    let customer = Mapper<CourseMicroClassModel>().mapArray(JSONArray: json)!
-//                    complete(customer)
+                let jsonData = Mapper<CourseMicroClassModel>().mapArray(JSONString: data.1 as! String)
+                complete(jsonData)
             }else{
                 failed(data.1)
             }

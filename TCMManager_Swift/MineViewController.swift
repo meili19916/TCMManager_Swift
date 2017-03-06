@@ -52,14 +52,7 @@ class MineViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Do any additional setup after loading the view.
     }
     func getData() -> Void {
-        MBProgressHUDManager.sharedInstance.show(type:.Loading,text:nil, detailText:nil,onView: self.view)
-        RequestManager.getCourseAndMicroclassList(pageIndex: 1, pageSize: 10, complete: { (result) in
-            //                let array = Mapper<CourseMicroClassModel>().map(JSONString: result as! String)
-            //                self.dataArray = array as! Array<CourseMicroClassModel>?
-        }) { (result) in
-            MBProgressHUDManager.sharedInstance.show(type: .Text, text: result as? String, detailText: nil, onView: self.view)
 
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
