@@ -9,6 +9,8 @@
 import UIKit
 
 class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    var dataArray:Array<CourseMicroClassModel>?
+
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -25,19 +27,41 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         self.tabBarController?.navigationItem.title = "咨询"
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.leftBarButtonItem = nil
+        self.getData()
+
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:WorkStudioItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ItemCell", for: indexPath) as! WorkStudioItemTableViewCell
+        if indexPath.section == 0 {
+            if indexPath.row == 0  {
+                let cell:WorkStudioItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ItemCell", for: indexPath) as! WorkStudioItemTableViewCell
+                return cell
+            }else{
+                let cell:WorkStudioSectionItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SectionItemCell", for: indexPath) as! WorkStudioSectionItemTableViewCell
+                return cell
+            }
+        }
+        let cell:WorkStudioListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ListCell", for: indexPath) as! WorkStudioListTableViewCell
         return cell
+    }
+
+    func getData() -> Void {
+        MBProgressHUDManager.sharedInstance.show(type:.Loading,text:nil, detailText:nil,onView: self.view)
+            RequestManager.getCourseAndMicroclassList(pageIndex: 1, pageSize: 20, complete: { (result) in
+//                let array = Mapper<CourseMicroClassModel>().map(JSONString: result as! String)
+//                self.dataArray = array as! Array<CourseMicroClassModel>?
+            }) { (result) in
+                MBProgressHUDManager.sharedInstance.show(type: .Text, text: result as? String, detailText: nil, onView: self.view)
+
+        }
     }
 
 

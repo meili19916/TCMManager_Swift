@@ -19,11 +19,11 @@ class RequestManager: NSObject {
   static  func getTimeSpace() -> Void {
         NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/auth/get-server-time"), params: nil) { (data) in
             if data.0 {
-                let serverTime:Double = JSON(data:data.1 as! Data).doubleValue
+                let serverTime:Int64 = JSON(data:data.1 as! Data).int64Value
                 let date:Date = Date.init()
-                let time = date.timeIntervalSince1970
-                let distance = serverTime - time
-                UserDefaults.standard.set(String(distance), forKey: "timeSpace")
+                let time:Int64 = Int64(date.timeIntervalSince1970)
+//                let distance:Int64 = serverTime + serverTime - time
+                UserDefaults.standard.set("1488781272", forKey: "timeSpace")
                 UserDefaults.standard.synchronize()
             }else{
                 if  UserDefaults.standard.object(forKey: "timeSpace") == nil{
@@ -95,5 +95,29 @@ class RequestManager: NSObject {
             }
         }
     }
+
+
+    //MARK:工作室
+    static func getCourseAndMicroclassList(pageIndex:Int,pageSize:Int,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
+//        let params:Dictionary<String,Any> = ["pageIndex":String(pageIndex),"pageSize":String(pageSize),"token":UserManager.sharedInstance.currentUser?.token ?? ""]
+        let params:Dictionary<String,Any> = ["pageIndex":String(pageIndex),"pageSize":String(pageSize),"token":"c708878418fba508292244bcca1896d9fc24f557"]
+
+        NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/course/get-mix-list"), params: params) { (data) in
+            if data.0 {
+                if !JSONSerialization.isValidJSONObject(data.1 ?? "") {
+                    print("不能转化")
+                    return
+                }
+                
+//                let json : AnyObject! = JSONSerialization.data(withJSONObject:data.1!(using: String.Encoding.utf8.rawValue)!, options: .prettyPrinted)
+//                    let customer = Mapper<CourseMicroClassModel>().mapArray(JSONArray: json)!
+//                    complete(customer)
+            }else{
+                failed(data.1)
+            }
+        }
+    }
+
+    
     
 }

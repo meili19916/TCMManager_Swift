@@ -127,3 +127,29 @@ class RegisterModel: Mappable {
     }
 }
 
+
+//MARK:获取文章微课列表
+class CourseMicroClassModel: Mappable {
+
+    var sourceId: String?
+    var sourceType: String?
+    var title: String?
+    var createTime: Double?
+    var coverImageUrl: String?
+    var actionCount: Int?
+    var hnsType: String?
+    var hnsContent: String?
+
+    required init?(map: Map) {
+    }
+    func mapping(map: Map) {
+        sourceId    <- map["sourceId"]
+        sourceType         <- map["sourceType"]
+        title         <- map["title"]
+        createTime    <- map["createTime"]
+        coverImageUrl         <- map["coverImageUrl"]
+        actionCount         <- map["actionCount"]
+        hnsType    <- map["hnsType"]
+        hnsContent         <- map["hnsContent"]
+    }
+}

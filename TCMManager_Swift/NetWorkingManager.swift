@@ -15,7 +15,7 @@ typealias RequestFailedClosure = (_ result:Any?)->Void
 
 class NetWorkingManager: NSObject {
     var netWorkStatusManager:NetworkReachabilityManager?
-    var netWorkingStatus:NetworkReachabilityManager.NetworkReachabilityStatus = .unknown
+    var netWorkingStatus:NetworkReachabilityManager.NetworkReachabilityStatus = .reachable(.wwan)
     var manager:Alamofire.SessionManager?
 
     static let sharedInstance = NetWorkingManager()
@@ -34,13 +34,12 @@ class NetWorkingManager: NSObject {
         if (params != nil) {
             requestHeader  = [
                 "digest": (params?.getMD5AndBase64EncryptWithDictionay)!,
-                "Content-Type" : "text/html; charset=UTF-8"
+                "User-Agent" : "1,3.2.4,iPhone,10.2,",
+                "Accept-Language" : "en;q=1"
             ]
         }
-        print(1111)
-            Alamofire.SessionManager().request(url,headers:requestHeader).responseJSON(completionHandler: {
+            manager?.request(url,headers:requestHeader).responseJSON(completionHandler: {
                 (response) in
-                print(self.manager)
                 self.requestSuccessHandle(response: response, completeHandler: completeHandler)
             })
     }
