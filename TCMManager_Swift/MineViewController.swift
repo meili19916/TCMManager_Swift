@@ -9,12 +9,10 @@
 import UIKit
 import Kingfisher
 
-
 class MineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     var dataArray:Array<Array<(identifier:String?,couple:(icon:String?,title:String?)?)>>?
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,8 +114,8 @@ class MineViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+
     }
-    
 
     /*
     // MARK: - Navigation

@@ -43,7 +43,7 @@ class FindPasswordViewController: UIViewController {
                                          userInfo:nil,repeats:true)
         }) { (result) in
             sender.isEnabled = true
-            MBProgressHUDManager.sharedInstance.show(type: .Text, text: result as? String, detailText: nil, onView: self.view)
+            MBProgressHUDManager.sharedInstance.show(type: .Text, text: result.1 as? String, detailText: nil, onView: self.view)
         }
     }
     /**

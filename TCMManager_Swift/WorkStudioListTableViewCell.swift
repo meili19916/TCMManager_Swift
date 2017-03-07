@@ -18,6 +18,10 @@ class WorkStudioListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.typeLabel.layer.masksToBounds = true
+        self.typeLabel.layer.borderColor = LineColor.cgColor
+        self.typeLabel.layer.cornerRadius = 3
+        self.typeLabel.layer.borderWidth = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

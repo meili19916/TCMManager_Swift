@@ -37,8 +37,7 @@ class LoginViewController: UIViewController {
             let mainTabVC = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController")
             self.navigationController?.pushViewController(mainTabVC, animated: true)
         },failed: {result in
-            MBProgressHUDManager.sharedInstance.show(type: .Text, text: result as? String, detailText: nil, onView: self.view)
-
+            MBProgressHUDManager.sharedInstance.show(type: .Text, text: result.1 as? String, detailText: nil, onView: self.view)
         })
     }
 

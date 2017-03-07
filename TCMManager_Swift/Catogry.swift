@@ -42,6 +42,13 @@ extension String {
         }
         return String(hash)
     }
+
+    func isValued() -> Bool {
+        if (self.characters.count == 0) {
+            return false
+        }
+        return true
+    }
 }
 
 extension Dictionary {
@@ -121,6 +128,24 @@ extension UIButton {
         
         self.titleEdgeInsets = titleInsets
         self.imageEdgeInsets = imageInsets
+    }
+}
+
+extension UIViewController{
+    func checkToken(requestCode:RequestStatusCode) -> Void {
+        if requestCode.rawValue == RequestStatusCode.TokenNoEffect.rawValue || requestCode.rawValue == RequestStatusCode.TokenOutDate.rawValue  {
+            self.navigationController?.pushViewController(LoginViewController(), animated: true)
+        }
+    }
+}
+
+extension UIImageView{
+    func setImageUrl(url:String) -> Void {
+            self.kf.setImage(with: URL.init(string: url), placeholder: UIImage.init(named: "defaultImage"),progressBlock: { (receivedSize, totalSize) in
+                
+            }) { (image, error, cacheType, imageURL) in
+
+        }
     }
 }
 

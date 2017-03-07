@@ -17,18 +17,18 @@ enum VertifyStatusType:Int {
 }
 
 class LoginUserModel:Mappable {
-    var qrcodeUrl: String?
+    var qrcodeUrl: String = ""
     var status: Int?
     var doctorId: String?
     var name: String?
-    var avatarUrl: String?
+    var avatarUrl: String = ""
     var token: String?
     var title: String?
     var level: Int?
     var expires: Int64?
     //方便本地存储用户再次登陆显示数据字段
     var assistantId:String?
-    var assistantAvatarUrl:String? //助手头像
+    var assistantAvatarUrl:String = "" //助手头像
     var assistantUserName:String? //助手名字
     var assistantRemark:String? //助手备注
     var phone:String?//用户手机号
@@ -37,7 +37,7 @@ class LoginUserModel:Mappable {
     var myMoney:String? //用户资产
     var unApproveMoney:String? //助手头像
     var myMoneyOriginal:String? //助手名字
-    var unApproveMoneyOriginal:String? //助手备注var assistantId:String?
+    var unApproveMoneyOriginal:String? //助手备注
     var isShowNotifyHead:String? //助手头像
     var doctorDetials:String? //助手名字
     var appConstValueArray:String? //助手备注
@@ -135,7 +135,7 @@ class CourseMicroClassModel: Mappable {
     var sourceType: Int?
     var title: String?
     var createTime: Double?
-    var coverImageUrl: String?
+    var coverImageUrl: String = ""
     var actionCount: Int?
     var hnsType: Int?
     var hnsContent: String?

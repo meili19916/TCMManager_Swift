@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		3BB582BD9C6F2618F1A29FD7 /* Pods_TCMManager_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426E0D9039C347D848BA4A61 /* Pods_TCMManager_Swift.framework */; };
 		7F070D3F1E4AC4F9005A2F52 /* NetWorkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F070D3E1E4AC4F9005A2F52 /* NetWorkingManager.swift */; };
+		7F1931E71E6E54BF005E43F2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1931E61E6E54BF005E43F2 /* CustomLabel.swift */; };
+		7F1931EE1E6E8305005E43F2 /* fresh_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931E91E6E8305005E43F2 /* fresh_1.png */; };
+		7F1931EF1E6E8305005E43F2 /* fresh_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931EA1E6E8305005E43F2 /* fresh_2.png */; };
+		7F1931F01E6E8305005E43F2 /* fresh_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931EB1E6E8305005E43F2 /* fresh_3.png */; };
+		7F1931F11E6E8305005E43F2 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931EC1E6E8305005E43F2 /* load.png */; };
+		7F1931F21E6E8305005E43F2 /* load_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931ED1E6E8305005E43F2 /* load_white.png */; };
 		7F5ED5001E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */; };
 		7F5ED5021E6D03FF005000A2 /* WorkStudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */; };
 		7F9F50AE1E49CA4D0051E029 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */; };
@@ -108,6 +114,12 @@
 		7A57F591F8A5D93C61A22BB2 /* Pods-TCMManager_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMManager_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TCMManager_Swift/Pods-TCMManager_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		7B14EEE5AF85779D28FC9E3A /* Pods-TCMManager_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMManager_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TCMManager_Swift/Pods-TCMManager_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		7F070D3E1E4AC4F9005A2F52 /* NetWorkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkingManager.swift; sourceTree = "<group>"; };
+		7F1931E61E6E54BF005E43F2 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		7F1931E91E6E8305005E43F2 /* fresh_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fresh_1.png; sourceTree = "<group>"; };
+		7F1931EA1E6E8305005E43F2 /* fresh_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fresh_2.png; sourceTree = "<group>"; };
+		7F1931EB1E6E8305005E43F2 /* fresh_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fresh_3.png; sourceTree = "<group>"; };
+		7F1931EC1E6E8305005E43F2 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
+		7F1931ED1E6E8305005E43F2 /* load_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load_white.png; sourceTree = "<group>"; };
 		7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioSectionItemTableViewCell.swift; sourceTree = "<group>"; };
 		7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioListTableViewCell.swift; sourceTree = "<group>"; };
 		7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +258,18 @@
 				7F9F50AD1E49CA4D0051E029 /* GuideViewController.xib */,
 			);
 			name = Guide;
+			sourceTree = "<group>";
+		};
+		7F1931E81E6E8305005E43F2 /* load */ = {
+			isa = PBXGroup;
+			children = (
+				7F1931E91E6E8305005E43F2 /* fresh_1.png */,
+				7F1931EA1E6E8305005E43F2 /* fresh_2.png */,
+				7F1931EB1E6E8305005E43F2 /* fresh_3.png */,
+				7F1931EC1E6E8305005E43F2 /* load.png */,
+				7F1931ED1E6E8305005E43F2 /* load_white.png */,
+			);
+			path = load;
 			sourceTree = "<group>";
 		};
 		7F9F50AB1E49C8060051E029 /* VC */ = {
@@ -495,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				7FF0D36D1E54345000BEFC87 /* Catogry.swift */,
+				7F1931E61E6E54BF005E43F2 /* CustomLabel.swift */,
 			);
 			name = Catogry;
 			sourceTree = "<group>";
@@ -539,6 +564,7 @@
 				7F9F50AB1E49C8060051E029 /* VC */,
 				7FF620941E49BA7800AC6F40 /* Manager */,
 				7FF620621E499BBB00AC6F40 /* AppDelegate.swift */,
+				7F1931E81E6E8305005E43F2 /* load */,
 				7FF620691E499BBB00AC6F40 /* Assets.xcassets */,
 				7FF6206E1E499BBB00AC6F40 /* Info.plist */,
 				7FF0D3791E54442200BEFC87 /* TCMManager_Swift-Bridging-Header.h */,
@@ -710,9 +736,14 @@
 				7FE7A61E1E63D0EA009D5F42 /* RegisterViewController.xib in Resources */,
 				7FE7A6C51E680F49009D5F42 /* MJRefresh.bundle in Resources */,
 				7F9F50AF1E49CA4D0051E029 /* GuideViewController.xib in Resources */,
+				7F1931F01E6E8305005E43F2 /* fresh_3.png in Resources */,
+				7F1931EF1E6E8305005E43F2 /* fresh_2.png in Resources */,
 				7FE7A6201E63D22D009D5F42 /* Main.storyboard in Resources */,
 				7FE7A61A1E616D74009D5F42 /* FindPasswordViewController.xib in Resources */,
+				7F1931EE1E6E8305005E43F2 /* fresh_1.png in Resources */,
+				7F1931F21E6E8305005E43F2 /* load_white.png in Resources */,
 				7F9F50B41E49CB2F0051E029 /* LoginViewController.xib in Resources */,
+				7F1931F11E6E8305005E43F2 /* load.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +855,7 @@
 				7FE7A62C1E63D2FB009D5F42 /* MineViewController.swift in Sources */,
 				7FE7A6261E63D2A7009D5F42 /* PatientManagerViewController.swift in Sources */,
 				7FE7A6C81E680F49009D5F42 /* UIScrollView+MJExtension.m in Sources */,
+				7F1931E71E6E54BF005E43F2 /* CustomLabel.swift in Sources */,
 				7FE7A6051E61689D009D5F42 /* EnumTransform.swift in Sources */,
 				7FE7A60F1E61689D009D5F42 /* Mapper.swift in Sources */,
 				7FE7A6041E61689D009D5F42 /* EnumOperators.swift in Sources */,

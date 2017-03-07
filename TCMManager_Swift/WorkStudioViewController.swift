@@ -9,8 +9,8 @@
 import UIKit
 
 class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var dataArray:Array<CourseMicroClassModel>?
-
+    var dataArray:Array<CourseMicroClassModel> = []
+    var pageIndex:Int = 1
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -19,8 +19,10 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         self.dataArray = Array.init()
         self.tableView.removeExtraFooterView()
         self.tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-//        self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.headRefresh))
-//        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.footerRefresh))
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.headRefresh))
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.footerRefresh))
+        self.headRefresh()
+
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -28,14 +30,12 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         self.tabBarController?.navigationItem.title = "咨询"
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.leftBarButtonItem = nil
-        self.getData()
-
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 2 :(self.dataArray?.count)!
+        return section == 0 ? 2 :(self.dataArray.count)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -51,32 +51,66 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
             }
         }
         let cell:WorkStudioListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ListCell", for: indexPath) as! WorkStudioListTableViewCell
-        cell.titleLabel.text = dataArray?[indexPath.row].title
-        let url = URL(string: (dataArray?[indexPath.row].coverImageUrl)!)
-        cell.detailImageView.kf.setImage(with: url)
+        cell.titleLabel.text = dataArray[indexPath.row].title
+        cell.detailImageView.setImageUrl(url: dataArray[indexPath.row].coverImageUrl)
         return cell
     }
 
     func getData() -> Void {
-        MBProgressHUDManager.sharedInstance.show(type:.Loading,text:nil, detailText:nil,onView: self.view)
-            RequestManager.getCourseAndMicroclassList(pageIndex: 1, pageSize: 20, complete: { (result) in
-                self.dataArray = result as! Array<CourseMicroClassModel>?
+            RequestManager.getCourseAndMicroclassList(pageIndex: pageIndex, pageSize: 20, complete: { (result) in
+                if self.pageIndex == 1 {
+                    self.dataArray = (result as! Array<CourseMicroClassModel>?)!
+                }else{
+                    let resultArray:Array<CourseMicroClassModel> = (result as! Array<CourseMicroClassModel>?)!
+                     self.dataArray = self.dataArray + resultArray
+                }
+                self.endRefresh()
                 self.tableView.reloadData()
-                MBProgressHUDManager.sharedInstance.dissmiss()
             }) { (result) in
-                MBProgressHUDManager.sharedInstance.show(type: .Text, text: result as? String, detailText: nil, onView: self.view)
+                MBProgressHUDManager.sharedInstance.show(type: .Text, text: result.1 as? String, detailText: nil, onView: self.view)
+                self.pageIndex = self.pageIndex - 1
+                self.endRefresh()
+                self.checkToken(requestCode: result.0)
         }
     }
 
-
     func headRefresh() -> Void {
-        print("headRefresh")
+        pageIndex = 1
+        self.getData()
     }
 
     func footerRefresh() -> Void {
-        print("footerRefresh")
+        pageIndex = pageIndex + 1
+        self.getData()
     }
 
+    func endRefresh() -> Void {
+        self.tableView.mj_header.endRefreshing()
+        self.tableView.mj_footer.endRefreshing()
+    }
+
+
+
+    @IBAction func tapMicroClass(_ sender: Any) {
+        print("micr")
+
+    }
+    @IBAction func tapAirHouse(_ sender: Any) {
+        print("house")
+
+    }
+
+    @IBAction func clickTeachingButton(_ sender: Any) {
+        print("clickTeachingButton")
+
+    }
+
+    @IBAction func clickSitButton(_ sender: Any) {
+    }
+    @IBAction func clickNotifyButton(_ sender: Any) {
+    }
+    @IBAction func clickBannerButton(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

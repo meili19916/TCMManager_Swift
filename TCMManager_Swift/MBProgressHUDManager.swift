@@ -22,7 +22,7 @@ class MBProgressHUDManager: NSObject {
                 hud = MBProgressHUD.showAdded(to: onView, animated: true)
                 hud?.label.text = text
                 //背景渐变效果
-                hud?.backgroundView.style = .blur
+                hud?.backgroundView.style = .solidColor
         case .Text:
             if hud?.superview == onView {
                 self.dissmiss()

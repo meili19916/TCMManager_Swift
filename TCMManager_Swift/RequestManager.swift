@@ -18,7 +18,7 @@ enum VertifyType:Int{
 class RequestManager: NSObject {
   static  func getTimeSpace() -> Void {
         NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/auth/get-server-time"), params: nil) { (data) in
-            if data.0 {
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
                 let serverTime:Int64 = JSON(data:data.1 as! Data).int64Value
                 let date:Date = Date.init()
                 let time:Int64 = Int64(date.timeIntervalSince1970)
@@ -36,7 +36,7 @@ class RequestManager: NSObject {
     static func login(phone:String,password:String,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
         let params:Dictionary<String,String> = ["phone":phone,"password":password.md5]
         NetWorkingManager.sharedInstance.post(url: PRE_URL.appending("/auth/login"), params: params) { (data) in
-            if data.0 {
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
                 let loginModel = Mapper<LoginUserModel>().map(JSONString: data.1 as! String)
                 loginModel?.phone = phone
                 loginModel?.password = password
@@ -44,14 +44,14 @@ class RequestManager: NSObject {
                 UserDefaults.standard.synchronize()
                 complete(loginModel)
             }else{
-                failed(data.1)
+                failed(data)
             }
         }
     }
     static func findPassword(phone:String,password:String,verifyNumber:String,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
         let params:Dictionary<String,String> = ["phone":phone,"newPassword":password.md5,"captcha":verifyNumber]
         NetWorkingManager.sharedInstance.post(url: PRE_URL.appending("/auth/find-password"), params: params) { (data) in
-            if data.0 {
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
                 let loginModel = Mapper<LoginUserModel>().map(JSONString: data.1 as! String)
                 loginModel?.phone = phone
                 loginModel?.password = password
@@ -59,7 +59,7 @@ class RequestManager: NSObject {
                 UserDefaults.standard.synchronize()
                 complete(loginModel)
             }else{
-                failed(data.1)
+                failed(data)
             }
         }
     }
@@ -72,7 +72,7 @@ class RequestManager: NSObject {
             params = ["phone":phone,"password":password.md5,"captcha":verifyNumber]
         }
         NetWorkingManager.sharedInstance.post(url: PRE_URL.appending("/auth/register"), params: params) { (data) in
-            if data.0 {
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
                 let loginModel = Mapper<LoginUserModel>().map(JSONString: data.1 as! String)
                 loginModel?.phone = phone
                 loginModel?.password = password
@@ -80,7 +80,7 @@ class RequestManager: NSObject {
                 UserDefaults.standard.synchronize()
                 complete(loginModel)
             }else{
-                failed(data.1)
+                failed(data)
             }
         }
     }
@@ -88,10 +88,10 @@ class RequestManager: NSObject {
     static func sendSMS(phone:String,type:VertifyType,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
         let params:Dictionary<String,String> = ["phone":phone,"type":String(type.rawValue)]
         NetWorkingManager.sharedInstance.post(url: PRE_URL.appending("/auth/send-sms"), params: params) { (data) in
-            if data.0 {
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
                 complete(data.1)
             }else{
-                failed(data.1)
+                failed(data)
             }
         }
     }
@@ -102,11 +102,11 @@ class RequestManager: NSObject {
         let params:Dictionary<String,Any> = ["pageIndex":String(pageIndex),"pageSize":String(pageSize),"token":UserManager.sharedInstance.currentUser?.token ?? ""]
 
         NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/course/get-mix-list"), params: params) { (data) in
-            if data.0 {
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
                 let jsonData = Mapper<CourseMicroClassModel>().mapArray(JSONString: data.1 as! String)
                 complete(jsonData)
             }else{
-                failed(data.1)
+                failed(data)
             }
         }
     }

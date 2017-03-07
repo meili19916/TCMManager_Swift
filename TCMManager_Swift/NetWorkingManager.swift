@@ -9,9 +9,17 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-typealias RequestCompletedClosure = ((statusCode:Bool,result:Any?))->Void
+enum RequestStatusCode:Int {
+    case Success = 1000
+    case TokenOutDate = 1003
+    case TokenNoEffect = 1013
+    case AuthenticationError = 2000
+    case Failed = 4000
+}
+
+typealias RequestCompletedClosure = ((statusCode:RequestStatusCode,result:Any?))->Void
 typealias RequestSuccessClosure = (_ result:Any?)->Void
-typealias RequestFailedClosure = (_ result:Any?)->Void
+typealias RequestFailedClosure = ((statusCode:RequestStatusCode,result:Any?))->Void
 
 class NetWorkingManager: NSObject {
     var netWorkStatusManager:NetworkReachabilityManager?
@@ -26,7 +34,7 @@ class NetWorkingManager: NSObject {
     func get(url:String!, params:Dictionary<String, Any>?, completeHandler:@escaping RequestCompletedClosure) -> Void {
         var params = params
         if (netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable || netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.unknown) {
-            completeHandler((false,"网络连接失败"))
+            completeHandler((.Failed,"网络连接失败"))
             return
         }
         var requestHeader:HTTPHeaders?
@@ -46,7 +54,7 @@ class NetWorkingManager: NSObject {
     func post(url:String!, params:Dictionary<String, Any>?, completeHandler:@escaping RequestCompletedClosure) -> Void {
         var params = params
         if (netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable || netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.unknown) {
-            completeHandler((false,"网络连接失败"))
+            completeHandler((.Success,"网络连接失败"))
             return
         }
         var requestHeader:HTTPHeaders?
@@ -65,7 +73,7 @@ class NetWorkingManager: NSObject {
         var params = params
 
         if (netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable || netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.unknown) {
-            completeHandler((false,"网络连接失败"))
+            completeHandler((.Failed,"网络连接失败"))
             return
         }
         var requestHeader:HTTPHeaders?
@@ -84,7 +92,7 @@ class NetWorkingManager: NSObject {
 
     func upload(dataArray:Array<Any>,completeHandler:@escaping RequestCompletedClosure) -> Void {
         if (netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable || netWorkingStatus == NetworkReachabilityManager.NetworkReachabilityStatus.unknown) {
-            completeHandler((false,"网络连接失败"))
+            completeHandler((.Failed,"网络连接失败"))
             return
         }
         manager?.upload(
@@ -100,7 +108,7 @@ class NetWorkingManager: NSObject {
                     self.requestSuccessHandle(response: response, completeHandler: completeHandler)
                 })
             case .failure(let encodingError):
-                completeHandler((false,encodingError))
+                completeHandler((.Failed,encodingError))
             }
         }
         )
@@ -110,20 +118,22 @@ class NetWorkingManager: NSObject {
         switch response.result {
         case .success( _):
             let baseModel = JSON(data: response.data!)
-            let userName = baseModel["errorCode"].intValue
-            if userName == 1000 {
+            let errorCode = baseModel["errorCode"].intValue
+            if errorCode == RequestStatusCode.Success.rawValue {
                 let data = baseModel["data"]
                 if data.type == .number || data.type == .string || data.type == .bool {
                     let modelData:Data = baseModel["data"].stringValue.data(using: String.Encoding.utf8)!
-                    completeHandler((true,modelData))
+                    completeHandler((.Success,modelData))
                 }else{
-                    completeHandler((true,data.rawString()))
+                    completeHandler((.Success,data.rawString()))
                 }
-            }else{
-                completeHandler((false,baseModel["errorMessage"].stringValue))
+            }else if (errorCode ==  RequestStatusCode.TokenOutDate.rawValue){
+                completeHandler((.TokenOutDate,baseModel["errorMessage"].stringValue))
+            }else if (errorCode ==  RequestStatusCode.TokenNoEffect.rawValue){
+                completeHandler((.TokenNoEffect,baseModel["errorMessage"].stringValue))
             }
         case .failure(let error):
-            completeHandler((false,error))
+            completeHandler((.Failed,error))
         }
     }
 
@@ -144,8 +154,6 @@ class NetWorkingManager: NSObject {
             return UserDefaults.standard.object(forKey: "timeSpace") as! NSString?
         }
     }
-
-
 }
 
 
