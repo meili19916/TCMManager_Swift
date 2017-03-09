@@ -111,6 +111,15 @@ class RequestManager: NSObject {
         }
     }
 
-    
-    
+    static func getActivityList(showType:Int,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
+        let params:Dictionary<String,Any> = ["showType":String(showType),"token":UserManager.sharedInstance.currentUser?.token ?? ""]
+        NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/get-activity-list"), params: params) { (data) in
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
+                let jsonData = Mapper<ActivityListModel>().mapArray(JSONString: data.1 as! String)
+                complete(jsonData)
+            }else{
+                failed(data)
+            }
+        }
+    }
 }

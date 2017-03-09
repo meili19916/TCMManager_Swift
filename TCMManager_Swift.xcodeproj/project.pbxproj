@@ -15,6 +15,8 @@
 		7F1931F01E6E8305005E43F2 /* fresh_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931EB1E6E8305005E43F2 /* fresh_3.png */; };
 		7F1931F11E6E8305005E43F2 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931EC1E6E8305005E43F2 /* load.png */; };
 		7F1931F21E6E8305005E43F2 /* load_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931ED1E6E8305005E43F2 /* load_white.png */; };
+		7F1931FD1E713FB5005E43F2 /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1931FC1E713FB5005E43F2 /* BannerTableViewCell.swift */; };
+		7F1931FF1E714206005E43F2 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1931FE1E714206005E43F2 /* BannerCollectionViewCell.swift */; };
 		7F5ED5001E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */; };
 		7F5ED5021E6D03FF005000A2 /* WorkStudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */; };
 		7F9F50AE1E49CA4D0051E029 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */; };
@@ -120,6 +122,8 @@
 		7F1931EB1E6E8305005E43F2 /* fresh_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fresh_3.png; sourceTree = "<group>"; };
 		7F1931EC1E6E8305005E43F2 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
 		7F1931ED1E6E8305005E43F2 /* load_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load_white.png; sourceTree = "<group>"; };
+		7F1931FC1E713FB5005E43F2 /* BannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
+		7F1931FE1E714206005E43F2 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioSectionItemTableViewCell.swift; sourceTree = "<group>"; };
 		7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioListTableViewCell.swift; sourceTree = "<group>"; };
 		7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -511,6 +515,8 @@
 				7FE7A6D31E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift */,
 				7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */,
 				7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */,
+				7F1931FC1E713FB5005E43F2 /* BannerTableViewCell.swift */,
+				7F1931FE1E714206005E43F2 /* BannerCollectionViewCell.swift */,
 			);
 			name = WorkStudioViews;
 			sourceTree = "<group>";
@@ -825,6 +831,7 @@
 				7FE7A6071E61689D009D5F42 /* HexColorTransform.swift in Sources */,
 				7FE7A6141E61689D009D5F42 /* TransformOperators.swift in Sources */,
 				7FE7A6C91E680F49009D5F42 /* UIScrollView+MJRefresh.m in Sources */,
+				7F1931FD1E713FB5005E43F2 /* BannerTableViewCell.swift in Sources */,
 				7FE7A6BC1E680F49009D5F42 /* MJRefreshAutoGifFooter.m in Sources */,
 				7FE7A6C41E680F49009D5F42 /* MJRefreshStateHeader.m in Sources */,
 				7FE7A6B71E680F49009D5F42 /* MJRefreshAutoFooter.m in Sources */,
@@ -853,6 +860,7 @@
 				7FE7A5E31E616215009D5F42 /* UserManager.swift in Sources */,
 				7FE7A6021E61689D009D5F42 /* DateTransform.swift in Sources */,
 				7FE7A62C1E63D2FB009D5F42 /* MineViewController.swift in Sources */,
+				7F1931FF1E714206005E43F2 /* BannerCollectionViewCell.swift in Sources */,
 				7FE7A6261E63D2A7009D5F42 /* PatientManagerViewController.swift in Sources */,
 				7FE7A6C81E680F49009D5F42 /* UIScrollView+MJExtension.m in Sources */,
 				7F1931E71E6E54BF005E43F2 /* CustomLabel.swift in Sources */,

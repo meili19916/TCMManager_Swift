@@ -153,3 +153,36 @@ class CourseMicroClassModel: Mappable {
         hnsContent         <- map["hnsContent"]
     }
 }
+//MARK:活动列表
+class ActivityListModel: Mappable {
+
+    var activityId: String?
+    var imageUrl: String = ""
+    var shareUrl: String?
+    var shareType: Int?
+    var shareInd: Int?
+    var shareTitle: String?
+    var addDoctorId: Int?
+    var shareContent: String?
+    var shareAddDoctorId: Int?
+    var addIsMingyiApp: Int?
+    var startTime: Double?
+    var endTime: Double?
+    var activityName: String?
+    required init?(map: Map) {}
+    func mapping(map: Map) {
+        activityId    <- map["activityId"]
+        imageUrl         <- map["imageUrl"]
+        shareUrl         <- map["shareUrl"]
+        shareType    <- map["shareType"]
+        shareInd         <- map["shareInd"]
+        shareTitle         <- map["shareTitle"]
+        addDoctorId    <- map["addDoctorId"]
+        shareContent         <- map["shareContent"]
+        shareAddDoctorId    <- map["shareAddDoctorId"]
+        addIsMingyiApp         <- map["addIsMingyiApp"]
+        startTime         <- map["startTime"]
+        endTime    <- map["endTime"]
+        activityName         <- map["activityName"]
+    }
+}

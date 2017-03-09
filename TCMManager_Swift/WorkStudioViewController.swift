@@ -10,6 +10,8 @@ import UIKit
 
 class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var dataArray:Array<CourseMicroClassModel> = []
+    var activityArray:Array<ActivityListModel> = []
+
     var pageIndex:Int = 1
 
     @IBOutlet weak var tableView: UITableView!
@@ -35,19 +37,34 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 2 :(self.dataArray.count)
+        return section == 0 ? activityArray.count > 0 ? 3 : 2 :(self.dataArray.count)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if indexPath.row == 0  {
-                let cell:WorkStudioItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ItemCell", for: indexPath) as! WorkStudioItemTableViewCell
-                return cell
+            if activityArray.count > 0 {
+                if indexPath.row == 0  {
+                    let cell:BannerTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CollectionCell", for: indexPath) as! BannerTableViewCell
+                    cell.activityArray = activityArray
+                    cell.beginScroll()
+                    return cell
+                }else if indexPath.row == 1  {
+                    let cell:WorkStudioItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ItemCell", for: indexPath) as! WorkStudioItemTableViewCell
+                    return cell
+                }else{
+                    let cell:WorkStudioSectionItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SectionItemCell", for: indexPath) as! WorkStudioSectionItemTableViewCell
+                    return cell
+                }
             }else{
-                let cell:WorkStudioSectionItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SectionItemCell", for: indexPath) as! WorkStudioSectionItemTableViewCell
-                return cell
+                if indexPath.row == 0  {
+                    let cell:WorkStudioItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ItemCell", for: indexPath) as! WorkStudioItemTableViewCell
+                    return cell
+                }else{
+                    let cell:WorkStudioSectionItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SectionItemCell", for: indexPath) as! WorkStudioSectionItemTableViewCell
+                    return cell
+                }
             }
         }
         let cell:WorkStudioListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ListCell", for: indexPath) as! WorkStudioListTableViewCell
@@ -71,6 +88,16 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
                 self.pageIndex = self.pageIndex - 1
                 self.endRefresh()
                 self.checkToken(requestCode: result.0)
+        }
+        self.getActivityListData()
+    }
+
+    func getActivityListData() -> Void {
+              RequestManager.getActivityList(showType: 2, complete: { (result) in
+                self.activityArray = (result as! Array<ActivityListModel>?)!
+                self.tableView.reloadData()
+              }) { (result) in
+
         }
     }
 

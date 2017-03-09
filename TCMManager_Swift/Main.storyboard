@@ -465,6 +465,65 @@
                                             <outlet property="typeLabel" destination="D55-aw-Xgz" id="0Rv-2o-HdS"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollectionCell" rowHeight="90" id="gSR-jm-Z04" customClass="BannerTableViewCell" customModule="TCMManager_Swift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="299" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSR-jm-Z04" id="WBI-26-dPE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j3I-Us-Nx9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="iun-rc-cLh">
+                                                        <size key="itemSize" width="375" height="90"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCell" id="DQ3-dO-0KE" customClass="BannerCollectionViewCell" customModule="TCMManager_Swift" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clearingbasis" translatesAutoresizingMaskIntoConstraints="NO" id="1Cn-WY-R2D">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="1Cn-WY-R2D" firstAttribute="top" secondItem="DQ3-dO-0KE" secondAttribute="top" id="IQd-zm-hYU"/>
+                                                                <constraint firstAttribute="bottom" secondItem="1Cn-WY-R2D" secondAttribute="bottom" id="K1D-9q-vc4"/>
+                                                                <constraint firstItem="1Cn-WY-R2D" firstAttribute="leading" secondItem="DQ3-dO-0KE" secondAttribute="leading" id="Pk1-lH-5pF"/>
+                                                                <constraint firstAttribute="trailing" secondItem="1Cn-WY-R2D" secondAttribute="trailing" id="wGo-XL-YiC"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="bannerImageView" destination="1Cn-WY-R2D" id="AWe-lU-9df"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="YYz-8j-VFR">
+                                                    <rect key="frame" x="168" y="55" width="39" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                </pageControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="j3I-Us-Nx9" secondAttribute="bottom" id="OHu-IC-unK"/>
+                                                <constraint firstAttribute="trailing" secondItem="j3I-Us-Nx9" secondAttribute="trailing" id="fhQ-Mg-0Gh"/>
+                                                <constraint firstItem="j3I-Us-Nx9" firstAttribute="leading" secondItem="WBI-26-dPE" secondAttribute="leading" id="nPU-h3-z7W"/>
+                                                <constraint firstItem="j3I-Us-Nx9" firstAttribute="top" secondItem="WBI-26-dPE" secondAttribute="top" id="tBB-Ze-Ump"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="j3I-Us-Nx9" id="NBO-bd-N3c"/>
+                                            <outlet property="flowLayout" destination="iun-rc-cLh" id="GwH-I3-St2"/>
+                                            <outlet property="pageControl" destination="YYz-8j-VFR" id="GmZ-q4-cAN"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="oi9-H8-YuC" id="waU-Q8-0z9"/>
@@ -476,8 +535,8 @@
                         <constraints>
                             <constraint firstItem="HLH-Wj-5CR" firstAttribute="top" secondItem="ugd-Ps-xx1" secondAttribute="bottom" constant="-64" id="014-ne-M79"/>
                             <constraint firstItem="6zs-tH-LiN" firstAttribute="top" secondItem="HLH-Wj-5CR" secondAttribute="bottom" id="48F-Oy-xoJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HLH-Wj-5CR" secondAttribute="trailing" constant="-16" id="WAc-aV-k9Y"/>
-                            <constraint firstItem="HLH-Wj-5CR" firstAttribute="leading" secondItem="ACO-bT-KuT" secondAttribute="leadingMargin" constant="-16" id="uLn-JJ-cX7"/>
+                            <constraint firstAttribute="trailing" secondItem="HLH-Wj-5CR" secondAttribute="trailing" id="WAc-aV-k9Y"/>
+                            <constraint firstItem="HLH-Wj-5CR" firstAttribute="leading" secondItem="ACO-bT-KuT" secondAttribute="leading" id="uLn-JJ-cX7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="工作室" image="conmmunicate" id="7Rv-xs-8X2"/>
@@ -571,6 +630,7 @@
         <image name="2002" width="48" height="48"/>
         <image name="2003" width="48" height="48"/>
         <image name="2004" width="48" height="48"/>
+        <image name="Clearingbasis" width="26" height="26"/>
         <image name="conmmunicate" width="24" height="24"/>
         <image name="currentcertificationicon" width="18" height="18"/>
         <image name="defaultImage" width="100" height="100"/>
