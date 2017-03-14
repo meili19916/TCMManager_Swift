@@ -1,18 +1,21 @@
 //
-//  WorkStudioSectionItemTableViewCell.swift
+//  PatientManagerListTableViewCell.swift
 //  TCMManager_Swift
 //
-//  Created by HeLijuan on 17/3/6.
+//  Created by HeLijuan on 17/3/14.
 //  Copyright © 2017年 HeLijuan. All rights reserved.
 //
 
 import UIKit
 
-class WorkStudioSectionItemTableViewCell: UITableViewCell {
+class PatientManagerListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var headImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = UITableViewCellSelectionStyle.none
         // Initialization code
     }
 

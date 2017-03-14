@@ -19,6 +19,7 @@ class BannerTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollection
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         collectionView.delegate = self
         collectionView.dataSource = self
         flowLayout.itemSize = CGSize.init(width: ScreenWidth, height: 100)
@@ -51,7 +52,7 @@ class BannerTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollection
         if pageControl.currentPage == activityArray.count - 1 {
             pageControl.currentPage = 0
         }
-        collectionView.scrollToItem(at: IndexPath.init(row: pageControl.currentPage, section: 0), at: .left, animated: false)
+        collectionView.scrollToItem(at: IndexPath.init(row: pageControl.currentPage, section: 0), at: .left, animated: true)
     }
 
     func removeTimer(){

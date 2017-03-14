@@ -29,7 +29,7 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "咨询"
+        self.tabBarController?.navigationItem.title = "工作室"
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
         self.tabBarController?.navigationItem.leftBarButtonItem = nil
     }
@@ -70,7 +70,15 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         let cell:WorkStudioListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ListCell", for: indexPath) as! WorkStudioListTableViewCell
         cell.titleLabel.text = dataArray[indexPath.row].title
         cell.detailImageView.setImageUrl(url: dataArray[indexPath.row].coverImageUrl)
+        cell.isMicroClassImageView.isHidden = dataArray[indexPath.row].hnsType == 1;
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1 {
+            self.navigationController?.pushViewController(ArticleViewController(), animated: true)
+        }
     }
 
     func getData() -> Void {
@@ -94,7 +102,7 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
 
     func getActivityListData() -> Void {
               RequestManager.getActivityList(showType: 2, complete: { (result) in
-                self.activityArray = (result as! Array<ActivityListModel>?)!
+//                self.activityArray = (result as! Array<ActivityListModel>?)!
                 self.tableView.reloadData()
               }) { (result) in
 
@@ -116,8 +124,6 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         self.tableView.mj_footer.endRefreshing()
     }
 
-
-
     @IBAction func tapMicroClass(_ sender: Any) {
         print("micr")
 
@@ -133,10 +139,13 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
     }
 
     @IBAction func clickSitButton(_ sender: Any) {
+
     }
     @IBAction func clickNotifyButton(_ sender: Any) {
+
     }
     @IBAction func clickBannerButton(_ sender: Any) {
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

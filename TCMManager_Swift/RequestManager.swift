@@ -122,4 +122,16 @@ class RequestManager: NSObject {
             }
         }
     }
+
+    static func getPatientMessageList(complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
+        let params:Dictionary<String,Any> = ["page":"1","pageSize":"200","token":UserManager.sharedInstance.currentUser?.token ?? ""]
+        NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/get-theme-list-one"), params: params) { (data) in
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
+                let jsonData = Mapper<PatientMessageListModel>().mapArray(JSONString: data.1 as! String)
+                complete(jsonData)
+            }else{
+                failed(data)
+            }
+        }
+    }
 }

@@ -12,6 +12,8 @@ class WorkStudioItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = UITableViewCellSelectionStyle.none
+
         for  button  in self.contentView.subviews {
             let buttom:UIButton = button as! UIButton
             buttom.imageView?.contentMode = .center

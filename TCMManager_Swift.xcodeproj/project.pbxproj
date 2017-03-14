@@ -84,6 +84,10 @@
 		7FE7A6CE1E681D81009D5F42 /* MineListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6CD1E681D81009D5F42 /* MineListTableViewCell.swift */; };
 		7FE7A6D01E691BEB009D5F42 /* MineVerityfyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6CF1E691BEB009D5F42 /* MineVerityfyTableViewCell.swift */; };
 		7FE7A6D41E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A6D31E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift */; };
+		7FEA98241E77D30C0078E0AA /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA98221E77D30C0078E0AA /* ArticleViewController.swift */; };
+		7FEA98251E77D30C0078E0AA /* ArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FEA98231E77D30C0078E0AA /* ArticleViewController.xib */; };
+		7FEA98271E77DA270078E0AA /* PatientManangerHeadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA98261E77DA270078E0AA /* PatientManangerHeadTableViewCell.swift */; };
+		7FEA982A1E77DA3E0078E0AA /* PatientManagerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA98291E77DA3E0078E0AA /* PatientManagerListTableViewCell.swift */; };
 		7FF0D36E1E54345000BEFC87 /* Catogry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0D36D1E54345000BEFC87 /* Catogry.swift */; };
 		7FF0D37C1E554D7900BEFC87 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0D37B1E554D7900BEFC87 /* Models.swift */; };
 		7FF620631E499BBB00AC6F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF620621E499BBB00AC6F40 /* AppDelegate.swift */; };
@@ -212,6 +216,10 @@
 		7FE7A6CD1E681D81009D5F42 /* MineListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineListTableViewCell.swift; sourceTree = "<group>"; };
 		7FE7A6CF1E691BEB009D5F42 /* MineVerityfyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineVerityfyTableViewCell.swift; sourceTree = "<group>"; };
 		7FE7A6D31E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioItemTableViewCell.swift; sourceTree = "<group>"; };
+		7FEA98221E77D30C0078E0AA /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		7FEA98231E77D30C0078E0AA /* ArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleViewController.xib; sourceTree = "<group>"; };
+		7FEA98261E77DA270078E0AA /* PatientManangerHeadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientManangerHeadTableViewCell.swift; sourceTree = "<group>"; };
+		7FEA98291E77DA3E0078E0AA /* PatientManagerListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientManagerListTableViewCell.swift; sourceTree = "<group>"; };
 		7FF0D36D1E54345000BEFC87 /* Catogry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catogry.swift; sourceTree = "<group>"; };
 		7FF0D3791E54442200BEFC87 /* TCMManager_Swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TCMManager_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FF0D37B1E554D7900BEFC87 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -382,6 +390,7 @@
 		7FE7A6221E63D24A009D5F42 /* PatientManager */ = {
 			isa = PBXGroup;
 			children = (
+				7FEA98281E77DA2C0078E0AA /* View */,
 				7FE7A6251E63D2A7009D5F42 /* PatientManagerViewController.swift */,
 			);
 			name = PatientManager;
@@ -390,6 +399,7 @@
 		7FE7A6231E63D252009D5F42 /* WorkStudio */ = {
 			isa = PBXGroup;
 			children = (
+				7FEA98211E77D2E00078E0AA /* ArticleDetail */,
 				7FE7A6D21E6949B1009D5F42 /* WorkStudioViews */,
 				7FE7A6291E63D2E1009D5F42 /* WorkStudioViewController.swift */,
 			);
@@ -519,6 +529,24 @@
 				7F1931FE1E714206005E43F2 /* BannerCollectionViewCell.swift */,
 			);
 			name = WorkStudioViews;
+			sourceTree = "<group>";
+		};
+		7FEA98211E77D2E00078E0AA /* ArticleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7FEA98221E77D30C0078E0AA /* ArticleViewController.swift */,
+				7FEA98231E77D30C0078E0AA /* ArticleViewController.xib */,
+			);
+			name = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		7FEA98281E77DA2C0078E0AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FEA98261E77DA270078E0AA /* PatientManangerHeadTableViewCell.swift */,
+				7FEA98291E77DA3E0078E0AA /* PatientManagerListTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		7FF0D36C1E54334700BEFC87 /* Catogry */ = {
@@ -745,6 +773,7 @@
 				7F1931F01E6E8305005E43F2 /* fresh_3.png in Resources */,
 				7F1931EF1E6E8305005E43F2 /* fresh_2.png in Resources */,
 				7FE7A6201E63D22D009D5F42 /* Main.storyboard in Resources */,
+				7FEA98251E77D30C0078E0AA /* ArticleViewController.xib in Resources */,
 				7FE7A61A1E616D74009D5F42 /* FindPasswordViewController.xib in Resources */,
 				7F1931EE1E6E8305005E43F2 /* fresh_1.png in Resources */,
 				7F1931F21E6E8305005E43F2 /* load_white.png in Resources */,
@@ -852,6 +881,7 @@
 				7FE7A6111E61689D009D5F42 /* Operators.swift in Sources */,
 				7FE7A6281E63D2CB009D5F42 /* MedicalRecordViewController.swift in Sources */,
 				7FE7A6C21E680F49009D5F42 /* MJRefreshGifHeader.m in Sources */,
+				7FEA982A1E77DA3E0078E0AA /* PatientManagerListTableViewCell.swift in Sources */,
 				7FA2F95C1E5584B300FC6671 /* MainTableViewController.swift in Sources */,
 				7F5ED5021E6D03FF005000A2 /* WorkStudioListTableViewCell.swift in Sources */,
 				7FE7A60D1E61689D009D5F42 /* MapError.swift in Sources */,
@@ -880,6 +910,7 @@
 				7FE7A6D41E6949FE009D5F42 /* WorkStudioItemTableViewCell.swift in Sources */,
 				7FE7A6C71E680F49009D5F42 /* NSBundle+MJRefresh.m in Sources */,
 				7FE7A6101E61689D009D5F42 /* NSDecimalNumberTransform.swift in Sources */,
+				7FEA98241E77D30C0078E0AA /* ArticleViewController.swift in Sources */,
 				7FE7A60C1E61689D009D5F42 /* Map.swift in Sources */,
 				7FF620931E49A8AB00AC6F40 /* LuanchViewManager.swift in Sources */,
 				7F9F50B31E49CB2F0051E029 /* LoginViewController.swift in Sources */,
@@ -889,6 +920,7 @@
 				7FE7A62E1E63D7CD009D5F42 /* MainTabBarController.swift in Sources */,
 				7FE7A6CE1E681D81009D5F42 /* MineListTableViewCell.swift in Sources */,
 				7FE7A6C31E680F49009D5F42 /* MJRefreshNormalHeader.m in Sources */,
+				7FEA98271E77DA270078E0AA /* PatientManangerHeadTableViewCell.swift in Sources */,
 				7FE7A6131E61689D009D5F42 /* TransformOf.swift in Sources */,
 				7FF620961E49BA9B00AC6F40 /* ConstManager.swift in Sources */,
 				7FE7A6011E61689D009D5F42 /* DateFormatterTransform.swift in Sources */,
@@ -1026,7 +1058,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3A4DMS5357;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/MBProgressHUD";
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/Pods/MBProgressHUD",
+					"${SRCROOT}/WorkingRoomActivityCell",
+				);
 				INFOPLIST_FILE = TCMManager_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1047,7 +1082,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3A4DMS5357;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/MBProgressHUD";
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/Pods/MBProgressHUD",
+					"${SRCROOT}/WorkingRoomActivityCell",
+				);
 				INFOPLIST_FILE = TCMManager_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

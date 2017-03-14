@@ -186,3 +186,24 @@ class ActivityListModel: Mappable {
         activityName         <- map["activityName"]
     }
 }
+//MARK:获取病人聊天列表
+class PatientMessageListModel: Mappable {
+
+    var usrName: String?
+    var msgCategory: Int = 0
+    var mteContent: String?
+    var lastTime: Double?
+    var usrAvatar: String = ""
+
+
+    required init?(map: Map) {
+    }
+    func mapping(map: Map) {
+        usrName    <- map["usrName"]
+        msgCategory         <- map["msgCategory"]
+        mteContent         <- map["mteContent"]
+        lastTime    <- map["lastTime"]
+        usrAvatar    <- map["usrAvatar"]
+
+    }
+}

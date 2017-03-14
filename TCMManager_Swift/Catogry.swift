@@ -149,3 +149,47 @@ extension UIImageView{
     }
 }
 
+extension Date{
+    func formateDate() -> String {
+        let now = Date.init()
+        let beTime = self.timeIntervalSince1970
+        let distanceTime = now.timeIntervalSince1970 - beTime;
+        var distanceStr:String
+
+        let df = DateFormatter.init()
+        df.dateFormat = "HH:mm"
+        let timeStr = df.string(from: self)
+        df.dateFormat = "dd"
+        let nowDay = df.string(from: now)
+        let lastDay = df.string(from: self)
+
+        if (distanceTime < 60) {//小于一分钟
+            distanceStr = "刚刚";
+        }else if (distanceTime < 3600) {//时间小于一个小时
+            distanceStr =  String(distanceTime/60) + "分钟前"
+        }else if(distanceTime < 24*60*60 && Int(nowDay) == Int(lastDay)){//时间小于一天
+            distanceStr = "今天" + timeStr
+        }else if(distanceTime<24*60*60*2 && Int(nowDay) != Int(lastDay)){
+
+            if ((Int(nowDay)! - Int(lastDay)! == 1 ) || (Int(nowDay)! - Int(lastDay)! > 10 && Int(nowDay)! == 1)) {
+                distanceStr = "昨天" + timeStr
+            }
+            else{
+                df.dateFormat = "MM-dd HH:mm"
+                distanceStr = df.string(from: self)
+            }
+        }
+        else if(distanceTime < 24*60*60*365){
+            df.dateFormat = "MM-dd HH:mm"
+            distanceStr = df.string(from: self)
+        }
+        else{
+            df.dateFormat = "yyyy-MM-dd HH:mm"
+            distanceStr = df.string(from: self)
+        }
+        return distanceStr;
+
+    }
+
+}
+
