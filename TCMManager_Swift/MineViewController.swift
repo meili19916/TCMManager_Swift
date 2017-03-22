@@ -17,14 +17,12 @@ class MineViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        UserManager.sharedInstance.currentUser?.status = 3
         if UserManager.sharedInstance.currentUser?.status == VertifyStatusType.Veritifyed.rawValue {
             self.dataArray = [[(identifier:"InfoCell",couple:nil)],
                               [(identifier:"ListCell",couple:(icon:"currenteditdata",title:"编辑资料")),(identifier:"ListCell",couple:(icon:"currentMicroClassCollection",title:"收藏"))],
                               [(identifier:"ListCell",couple:(icon:"currentassetsicon",title:"资产")),(identifier:"ListCell",couple:(icon:"currentwelfare",title:"我的福利")),(identifier:"ListCell",couple:(icon:"invite_friend_icon",title:"邀请好友"))],
                               [(identifier:"ListCell",couple:(icon:"facebackImage",title:"意见反馈")),(identifier:"ListCell",couple:(icon:"setting",title:"设置"))]]
         }else if(UserManager.sharedInstance.currentUser?.status == VertifyStatusType.NoVertify.rawValue){
-
             self.dataArray = [[(identifier:"InfoCell",couple:nil)],
                               [(identifier:"VerifyCell",couple:(icon:"currentcertificationicon",title:"立即认证"))],
                               [(identifier:"ListCell",couple:(icon:"currenteditdata",title:"编辑资料")),(identifier:"ListCell",couple:(icon:"currentMicroClassCollection",title:"收藏"))],
@@ -43,7 +41,6 @@ class MineViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                               [(identifier:"ListCell",couple:(icon:"currentassetsicon",title:"资产")),(identifier:"ListCell",couple:(icon:"currentwelfare",title:"我的福利")),(identifier:"ListCell",couple:(icon:"invite_friend_icon",title:"邀请好友"))],
                               [(identifier:"ListCell",couple:(icon:"facebackImage",title:"意见反馈")),(identifier:"ListCell",couple:(icon:"setting",title:"设置"))]]
         }
-
         self.tableView.removeExtraFooterView()
         self.tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 50, bottom: 0, right: 0)
         self.getData()

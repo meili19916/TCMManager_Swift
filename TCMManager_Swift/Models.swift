@@ -204,6 +204,32 @@ class PatientMessageListModel: Mappable {
         mteContent         <- map["mteContent"]
         lastTime    <- map["lastTime"]
         usrAvatar    <- map["usrAvatar"]
-
     }
 }
+
+//MARK:获取医案列表
+class MedicalRecordListModel: Mappable {
+
+    var userId: String?
+    var medicalRecordId: String?
+    var medicalRecordGroupId: String?
+    var coverImageUrl: String = ""
+    var userName: String = ""
+    var diagnosis: String = ""
+    var createDate: Double?
+    var diagnosisDate: Double?
+
+    required init?(map: Map) {
+    }
+    func mapping(map: Map) {
+        userId    <- map["userId"]
+        medicalRecordId         <- map["medicalRecordId"]
+        medicalRecordGroupId         <- map["medicalRecordGroupId"]
+        coverImageUrl    <- map["coverImageUrl"]
+        userName    <- map["userName"]
+        diagnosis         <- map["diagnosis"]
+        createDate    <- map["createDate"]
+        diagnosisDate    <- map["diagnosisDate"]
+    }
+}
+

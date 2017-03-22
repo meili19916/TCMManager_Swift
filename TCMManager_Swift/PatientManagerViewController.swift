@@ -9,12 +9,11 @@
 import UIKit
 
 class PatientManagerViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var dataArray:Array<PatientMessageListModel>?
+    var dataArray:Array<PatientMessageListModel> = []
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataArray = []
-       tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(PatientManagerViewController.getData))
+       self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(PatientManagerViewController.getData))
         self.getData()
         // Do any additional setup after loading the view.
     }
@@ -22,7 +21,7 @@ class PatientManagerViewController: UIViewController,UITableViewDelegate,UITable
         return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 2 : (dataArray?.count)!
+        return section == 0 ? 2 : self.dataArray.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.section == 0 ? 48 : 70
@@ -43,9 +42,9 @@ class PatientManagerViewController: UIViewController,UITableViewDelegate,UITable
             return cell
         }
         let cell:PatientManagerListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ListCell", for: indexPath) as! PatientManagerListTableViewCell
-        cell.headImageView.setImageUrl(url: (dataArray?[indexPath.row].usrAvatar)!)
-        cell.nameLabel.text = (dataArray?[indexPath.row].usrName)!
-        let category:Int = (dataArray?[indexPath.row].msgCategory)!
+        cell.headImageView.setImageUrl(url: (dataArray[indexPath.row].usrAvatar))
+        cell.nameLabel.text = (dataArray[indexPath.row].usrName)!
+        let category:Int = (dataArray[indexPath.row].msgCategory)
         cell.messageLabel.textColor = MainColor
         switch category {
         case 3:
@@ -61,10 +60,10 @@ class PatientManagerViewController: UIViewController,UITableViewDelegate,UITable
         case 10:
             cell.messageLabel.text = "[坐诊信息]"
         default:
-            cell.messageLabel.text = dataArray?[indexPath.row].mteContent
+            cell.messageLabel.text = dataArray[indexPath.row].mteContent
             cell.messageLabel.textColor = GrayTextColor
         }
-        let date  = Date.init(timeIntervalSince1970: dataArray![indexPath.row].lastTime!)
+        let date  = Date.init(timeIntervalSince1970: dataArray[indexPath.row].lastTime!)
         cell.timeLabel.text = date.formateDate()
         return cell
     }
@@ -75,7 +74,7 @@ class PatientManagerViewController: UIViewController,UITableViewDelegate,UITable
 
     func getData() -> Void {
         RequestManager.getPatientMessageList(complete: { (data) in
-            self.dataArray = data as! Array<PatientMessageListModel>?
+            self.dataArray = (data as! Array<PatientMessageListModel>?)!
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
         }) { (result) in

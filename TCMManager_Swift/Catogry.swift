@@ -142,8 +142,19 @@ extension UIViewController{
 extension UIImageView{
     func setImageUrl(url:String) -> Void {
             self.kf.setImage(with: URL.init(string: url), placeholder: UIImage.init(named: "defaultImage"),progressBlock: { (receivedSize, totalSize) in
-                
+
             }) { (image, error, cacheType, imageURL) in
+
+        }
+    }
+    func setImageUrlWithDefualt(url:String,defualtImage:String?) -> Void {
+        if !(defualtImage?.isValued())! {
+            self.setImageUrl(url: url)
+            return
+        }
+        self.kf.setImage(with: URL.init(string: url), placeholder: UIImage.init(named: defualtImage!),progressBlock: { (receivedSize, totalSize) in
+            
+        }) { (image, error, cacheType, imageURL) in
 
         }
     }
@@ -188,8 +199,12 @@ extension Date{
             distanceStr = df.string(from: self)
         }
         return distanceStr;
-
     }
-
+    static func formateDate(timeVal:Double,format:String) -> String{
+        let date = Date.init(timeIntervalSince1970: timeVal)
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = format
+       return  formatter.string(from: date)
+    }
 }
 

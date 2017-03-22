@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3BB582BD9C6F2618F1A29FD7 /* Pods_TCMManager_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426E0D9039C347D848BA4A61 /* Pods_TCMManager_Swift.framework */; };
 		7F070D3F1E4AC4F9005A2F52 /* NetWorkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F070D3E1E4AC4F9005A2F52 /* NetWorkingManager.swift */; };
+		7F07199E1E824FB10097FED6 /* MedicalNamedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F07199D1E824FB10097FED6 /* MedicalNamedTableViewCell.swift */; };
+		7F0719A01E8256310097FED6 /* MedicalNoNamedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F07199F1E8256310097FED6 /* MedicalNoNamedTableViewCell.swift */; };
 		7F1931E71E6E54BF005E43F2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1931E61E6E54BF005E43F2 /* CustomLabel.swift */; };
 		7F1931EE1E6E8305005E43F2 /* fresh_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931E91E6E8305005E43F2 /* fresh_1.png */; };
 		7F1931EF1E6E8305005E43F2 /* fresh_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931EA1E6E8305005E43F2 /* fresh_2.png */; };
@@ -120,6 +122,8 @@
 		7A57F591F8A5D93C61A22BB2 /* Pods-TCMManager_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMManager_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TCMManager_Swift/Pods-TCMManager_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		7B14EEE5AF85779D28FC9E3A /* Pods-TCMManager_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCMManager_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TCMManager_Swift/Pods-TCMManager_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		7F070D3E1E4AC4F9005A2F52 /* NetWorkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkingManager.swift; sourceTree = "<group>"; };
+		7F07199D1E824FB10097FED6 /* MedicalNamedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalNamedTableViewCell.swift; sourceTree = "<group>"; };
+		7F07199F1E8256310097FED6 /* MedicalNoNamedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalNoNamedTableViewCell.swift; sourceTree = "<group>"; };
 		7F1931E61E6E54BF005E43F2 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		7F1931E91E6E8305005E43F2 /* fresh_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fresh_1.png; sourceTree = "<group>"; };
 		7F1931EA1E6E8305005E43F2 /* fresh_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fresh_2.png; sourceTree = "<group>"; };
@@ -284,6 +288,15 @@
 			path = load;
 			sourceTree = "<group>";
 		};
+		7F63A5151E824D6200218DC7 /* MedicalRecordViews */ = {
+			isa = PBXGroup;
+			children = (
+				7F07199D1E824FB10097FED6 /* MedicalNamedTableViewCell.swift */,
+				7F07199F1E8256310097FED6 /* MedicalNoNamedTableViewCell.swift */,
+			);
+			name = MedicalRecordViews;
+			sourceTree = "<group>";
+		};
 		7F9F50AB1E49C8060051E029 /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +422,7 @@
 		7FE7A6241E63D272009D5F42 /* MedicalRecord */ = {
 			isa = PBXGroup;
 			children = (
+				7F63A5151E824D6200218DC7 /* MedicalRecordViews */,
 				7FE7A6271E63D2CB009D5F42 /* MedicalRecordViewController.swift */,
 			);
 			name = MedicalRecord;
@@ -597,9 +611,9 @@
 				7FF0D36C1E54334700BEFC87 /* Catogry */,
 				7F9F50AB1E49C8060051E029 /* VC */,
 				7FF620941E49BA7800AC6F40 /* Manager */,
-				7FF620621E499BBB00AC6F40 /* AppDelegate.swift */,
 				7F1931E81E6E8305005E43F2 /* load */,
 				7FF620691E499BBB00AC6F40 /* Assets.xcassets */,
+				7FF620621E499BBB00AC6F40 /* AppDelegate.swift */,
 				7FF6206E1E499BBB00AC6F40 /* Info.plist */,
 				7FF0D3791E54442200BEFC87 /* TCMManager_Swift-Bridging-Header.h */,
 			);
@@ -903,6 +917,8 @@
 				7FE7A6CC1E681A5F009D5F42 /* MineInfoTableViewCell.swift in Sources */,
 				7FA2F9601E55857C00FC6671 /* RequestManager.swift in Sources */,
 				7FE7A6C01E680F49009D5F42 /* MJRefreshBackNormalFooter.m in Sources */,
+				7F0719A01E8256310097FED6 /* MedicalNoNamedTableViewCell.swift in Sources */,
+				7F07199E1E824FB10097FED6 /* MedicalNamedTableViewCell.swift in Sources */,
 				7FE7A6C61E680F49009D5F42 /* MJRefreshConst.m in Sources */,
 				7F9F50AE1E49CA4D0051E029 /* GuideViewController.swift in Sources */,
 				7FE7A6B91E680F49009D5F42 /* MJRefreshComponent.m in Sources */,

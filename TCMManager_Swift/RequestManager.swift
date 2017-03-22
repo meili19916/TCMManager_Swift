@@ -134,4 +134,18 @@ class RequestManager: NSObject {
             }
         }
     }
+    static func getMedicalRecordList(arrange:String?,searchStr:String?,userId:String?,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
+        var params:Dictionary<String,Any> = ["token":UserManager.sharedInstance.currentUser?.token ?? ""]
+        params["userId"] = userId
+        params["searchStr"] = searchStr
+        params["arranged"] = arrange
+        NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/get-medical-record-list"), params: params) { (data) in
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
+                let jsonData = Mapper<MedicalRecordListModel>().mapArray(JSONString: data.1 as! String)
+                complete(jsonData)
+            }else{
+                failed(data)
+            }
+        }
+    }
 }
