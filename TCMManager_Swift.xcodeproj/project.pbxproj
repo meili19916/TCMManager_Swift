@@ -18,15 +18,32 @@
 		7F1931F11E6E8305005E43F2 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931EC1E6E8305005E43F2 /* load.png */; };
 		7F1931F21E6E8305005E43F2 /* load_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1931ED1E6E8305005E43F2 /* load_white.png */; };
 		7F1931FD1E713FB5005E43F2 /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1931FC1E713FB5005E43F2 /* BannerTableViewCell.swift */; };
-		7F1931FF1E714206005E43F2 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1931FE1E714206005E43F2 /* BannerCollectionViewCell.swift */; };
+		7F317CD11EADD6BE00827F17 /* TeachingCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F317CCF1EADD6BE00827F17 /* TeachingCenterViewController.swift */; };
+		7F317CD21EADD6BE00827F17 /* TeachingCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F317CD01EADD6BE00827F17 /* TeachingCenterViewController.xib */; };
+		7F317CD51EADDDD700827F17 /* TeachingCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F317CD31EADDDD700827F17 /* TeachingCenterTableViewCell.swift */; };
+		7F317CD61EADDDD700827F17 /* TeachingCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F317CD41EADDDD700827F17 /* TeachingCenterTableViewCell.xib */; };
 		7F5ED5001E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */; };
 		7F5ED5021E6D03FF005000A2 /* WorkStudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */; };
 		7F9F50AE1E49CA4D0051E029 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */; };
 		7F9F50AF1E49CA4D0051E029 /* GuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F50AD1E49CA4D0051E029 /* GuideViewController.xib */; };
 		7F9F50B31E49CB2F0051E029 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F50B11E49CB2F0051E029 /* LoginViewController.swift */; };
 		7F9F50B41E49CB2F0051E029 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F50B21E49CB2F0051E029 /* LoginViewController.xib */; };
-		7FA2F95C1E5584B300FC6671 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2F95B1E5584B300FC6671 /* MainTableViewController.swift */; };
 		7FA2F9601E55857C00FC6671 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2F95F1E55857C00FC6671 /* RequestManager.swift */; };
+		7FAF77E61EA9E40600894773 /* YLCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF77DC1EA9E40600894773 /* YLCycleCell.swift */; };
+		7FAF77E71EA9E40600894773 /* YLCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF77DD1EA9E40600894773 /* YLCycleView.swift */; };
+		7FAF77E81EA9E40600894773 /* YLMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF77DF1EA9E40600894773 /* YLMenuView.swift */; };
+		7FAF77E91EA9E40600894773 /* YLMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAF77E01EA9E40600894773 /* YLMenuView.xib */; };
+		7FAF77EA1EA9E40600894773 /* YLMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF77E11EA9E40600894773 /* YLMenuViewCell.swift */; };
+		7FAF77EB1EA9E40600894773 /* YLMenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAF77E21EA9E40600894773 /* YLMenuViewCell.xib */; };
+		7FAF77EC1EA9E40600894773 /* YLMenuViewSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF77E31EA9E40600894773 /* YLMenuViewSubCell.swift */; };
+		7FAF77ED1EA9E40600894773 /* YLMenuViewSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAF77E41EA9E40600894773 /* YLMenuViewSubCell.xib */; };
+		7FAF77EE1EA9E40600894773 /* YLSinglerowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAF77E51EA9E40600894773 /* YLSinglerowView.swift */; };
+		7FC3DFA61EAD8EDC0063968E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3DFA41EAD8EDC0063968E /* SettingViewController.swift */; };
+		7FC3DFA71EAD8EDC0063968E /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3DFA51EAD8EDC0063968E /* SettingViewController.xib */; };
+		7FC3DFAB1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3DFA91EAD8FFB0063968E /* SettingWithSwitchTableViewCell.swift */; };
+		7FC3DFAC1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3DFAA1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.xib */; };
+		7FC3DFAF1EAD91F30063968E /* SettingWelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3DFAD1EAD91F30063968E /* SettingWelcomeTableViewCell.swift */; };
+		7FC3DFB01EAD91F30063968E /* SettingWelcomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3DFAE1EAD91F30063968E /* SettingWelcomeTableViewCell.xib */; };
 		7FE7A5E11E6033E0009D5F42 /* MBProgressHUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A5E01E6033E0009D5F42 /* MBProgressHUDManager.swift */; };
 		7FE7A5E31E616215009D5F42 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A5E21E616215009D5F42 /* UserManager.swift */; };
 		7FE7A5FF1E61689D009D5F42 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7A5E61E61689D009D5F42 /* CustomDateFormatTransform.swift */; };
@@ -131,15 +148,32 @@
 		7F1931EC1E6E8305005E43F2 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load.png; sourceTree = "<group>"; };
 		7F1931ED1E6E8305005E43F2 /* load_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load_white.png; sourceTree = "<group>"; };
 		7F1931FC1E713FB5005E43F2 /* BannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
-		7F1931FE1E714206005E43F2 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F317CCF1EADD6BE00827F17 /* TeachingCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachingCenterViewController.swift; sourceTree = "<group>"; };
+		7F317CD01EADD6BE00827F17 /* TeachingCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachingCenterViewController.xib; sourceTree = "<group>"; };
+		7F317CD31EADDDD700827F17 /* TeachingCenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachingCenterTableViewCell.swift; sourceTree = "<group>"; };
+		7F317CD41EADDDD700827F17 /* TeachingCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachingCenterTableViewCell.xib; sourceTree = "<group>"; };
 		7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioSectionItemTableViewCell.swift; sourceTree = "<group>"; };
 		7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioListTableViewCell.swift; sourceTree = "<group>"; };
 		7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		7F9F50AD1E49CA4D0051E029 /* GuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideViewController.xib; sourceTree = "<group>"; };
 		7F9F50B11E49CB2F0051E029 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7F9F50B21E49CB2F0051E029 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		7FA2F95B1E5584B300FC6671 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		7FA2F95F1E55857C00FC6671 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		7FAF77DC1EA9E40600894773 /* YLCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLCycleCell.swift; sourceTree = "<group>"; };
+		7FAF77DD1EA9E40600894773 /* YLCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLCycleView.swift; sourceTree = "<group>"; };
+		7FAF77DF1EA9E40600894773 /* YLMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLMenuView.swift; sourceTree = "<group>"; };
+		7FAF77E01EA9E40600894773 /* YLMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YLMenuView.xib; sourceTree = "<group>"; };
+		7FAF77E11EA9E40600894773 /* YLMenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLMenuViewCell.swift; sourceTree = "<group>"; };
+		7FAF77E21EA9E40600894773 /* YLMenuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YLMenuViewCell.xib; sourceTree = "<group>"; };
+		7FAF77E31EA9E40600894773 /* YLMenuViewSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLMenuViewSubCell.swift; sourceTree = "<group>"; };
+		7FAF77E41EA9E40600894773 /* YLMenuViewSubCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YLMenuViewSubCell.xib; sourceTree = "<group>"; };
+		7FAF77E51EA9E40600894773 /* YLSinglerowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLSinglerowView.swift; sourceTree = "<group>"; };
+		7FC3DFA41EAD8EDC0063968E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		7FC3DFA51EAD8EDC0063968E /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		7FC3DFA91EAD8FFB0063968E /* SettingWithSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingWithSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		7FC3DFAA1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingWithSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		7FC3DFAD1EAD91F30063968E /* SettingWelcomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingWelcomeTableViewCell.swift; sourceTree = "<group>"; };
+		7FC3DFAE1EAD91F30063968E /* SettingWelcomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingWelcomeTableViewCell.xib; sourceTree = "<group>"; };
 		7FE7A5E01E6033E0009D5F42 /* MBProgressHUDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBProgressHUDManager.swift; sourceTree = "<group>"; };
 		7FE7A5E21E616215009D5F42 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		7FE7A5E61E61689D009D5F42 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
@@ -288,6 +322,17 @@
 			path = load;
 			sourceTree = "<group>";
 		};
+		7F317CCE1EADD69800827F17 /* TeachingCenter */ = {
+			isa = PBXGroup;
+			children = (
+				7F317CCF1EADD6BE00827F17 /* TeachingCenterViewController.swift */,
+				7F317CD01EADD6BE00827F17 /* TeachingCenterViewController.xib */,
+				7F317CD31EADDDD700827F17 /* TeachingCenterTableViewCell.swift */,
+				7F317CD41EADDDD700827F17 /* TeachingCenterTableViewCell.xib */,
+			);
+			name = TeachingCenter;
+			sourceTree = "<group>";
+		};
 		7F63A5151E824D6200218DC7 /* MedicalRecordViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,7 +373,6 @@
 		7FA2F9551E55844700FC6671 /* TabVC */ = {
 			isa = PBXGroup;
 			children = (
-				7FA2F95B1E5584B300FC6671 /* MainTableViewController.swift */,
 				7FE7A62D1E63D7CD009D5F42 /* MainTabBarController.swift */,
 			);
 			name = TabVC;
@@ -350,9 +394,64 @@
 			name = Request;
 			sourceTree = "<group>";
 		};
+		7FAF77DB1EA9E40600894773 /* YLCycleView */ = {
+			isa = PBXGroup;
+			children = (
+				7FAF77DC1EA9E40600894773 /* YLCycleCell.swift */,
+				7FAF77DD1EA9E40600894773 /* YLCycleView.swift */,
+				7FAF77DE1EA9E40600894773 /* YLMenuView */,
+				7FAF77E51EA9E40600894773 /* YLSinglerowView.swift */,
+			);
+			path = YLCycleView;
+			sourceTree = "<group>";
+		};
+		7FAF77DE1EA9E40600894773 /* YLMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				7FAF77DF1EA9E40600894773 /* YLMenuView.swift */,
+				7FAF77E01EA9E40600894773 /* YLMenuView.xib */,
+				7FAF77E11EA9E40600894773 /* YLMenuViewCell.swift */,
+				7FAF77E21EA9E40600894773 /* YLMenuViewCell.xib */,
+				7FAF77E31EA9E40600894773 /* YLMenuViewSubCell.swift */,
+				7FAF77E41EA9E40600894773 /* YLMenuViewSubCell.xib */,
+			);
+			path = YLMenuView;
+			sourceTree = "<group>";
+		};
+		7FC3DFA21EAD8E960063968E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				7FC3DFA81EAD8FCF0063968E /* SettingViews */,
+				7FC3DFA41EAD8EDC0063968E /* SettingViewController.swift */,
+				7FC3DFA51EAD8EDC0063968E /* SettingViewController.xib */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		7FC3DFA31EAD8EA60063968E /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7A6D11E693BA2009D5F42 /* MineViews */,
+				7FE7A62B1E63D2FB009D5F42 /* MineViewController.swift */,
+			);
+			name = Mine;
+			sourceTree = "<group>";
+		};
+		7FC3DFA81EAD8FCF0063968E /* SettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				7FC3DFA91EAD8FFB0063968E /* SettingWithSwitchTableViewCell.swift */,
+				7FC3DFAA1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.xib */,
+				7FC3DFAD1EAD91F30063968E /* SettingWelcomeTableViewCell.swift */,
+				7FC3DFAE1EAD91F30063968E /* SettingWelcomeTableViewCell.xib */,
+			);
+			name = SettingViews;
+			sourceTree = "<group>";
+		};
 		7FE7A5E41E61687E009D5F42 /* Frame */ = {
 			isa = PBXGroup;
 			children = (
+				7FAF77DB1EA9E40600894773 /* YLCycleView */,
 				7FE7A6881E680F49009D5F42 /* MJRefresh */,
 				7FE7A5E51E61689D009D5F42 /* ObjectMapper */,
 			);
@@ -394,8 +493,8 @@
 		7FE7A6211E63D243009D5F42 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				7FE7A6D11E693BA2009D5F42 /* MineViews */,
-				7FE7A62B1E63D2FB009D5F42 /* MineViewController.swift */,
+				7FC3DFA31EAD8EA60063968E /* Mine */,
+				7FC3DFA21EAD8E960063968E /* Setting */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -412,6 +511,7 @@
 		7FE7A6231E63D252009D5F42 /* WorkStudio */ = {
 			isa = PBXGroup;
 			children = (
+				7F317CCE1EADD69800827F17 /* TeachingCenter */,
 				7FEA98211E77D2E00078E0AA /* ArticleDetail */,
 				7FE7A6D21E6949B1009D5F42 /* WorkStudioViews */,
 				7FE7A6291E63D2E1009D5F42 /* WorkStudioViewController.swift */,
@@ -540,7 +640,6 @@
 				7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */,
 				7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */,
 				7F1931FC1E713FB5005E43F2 /* BannerTableViewCell.swift */,
-				7F1931FE1E714206005E43F2 /* BannerCollectionViewCell.swift */,
 			);
 			name = WorkStudioViews;
 			sourceTree = "<group>";
@@ -780,16 +879,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F317CD21EADD6BE00827F17 /* TeachingCenterViewController.xib in Resources */,
 				7FF6206A1E499BBB00AC6F40 /* Assets.xcassets in Resources */,
 				7FE7A61E1E63D0EA009D5F42 /* RegisterViewController.xib in Resources */,
 				7FE7A6C51E680F49009D5F42 /* MJRefresh.bundle in Resources */,
+				7FC3DFA71EAD8EDC0063968E /* SettingViewController.xib in Resources */,
 				7F9F50AF1E49CA4D0051E029 /* GuideViewController.xib in Resources */,
+				7FAF77E91EA9E40600894773 /* YLMenuView.xib in Resources */,
+				7FAF77ED1EA9E40600894773 /* YLMenuViewSubCell.xib in Resources */,
 				7F1931F01E6E8305005E43F2 /* fresh_3.png in Resources */,
 				7F1931EF1E6E8305005E43F2 /* fresh_2.png in Resources */,
 				7FE7A6201E63D22D009D5F42 /* Main.storyboard in Resources */,
+				7FC3DFB01EAD91F30063968E /* SettingWelcomeTableViewCell.xib in Resources */,
+				7F317CD61EADDDD700827F17 /* TeachingCenterTableViewCell.xib in Resources */,
 				7FEA98251E77D30C0078E0AA /* ArticleViewController.xib in Resources */,
+				7FAF77EB1EA9E40600894773 /* YLMenuViewCell.xib in Resources */,
 				7FE7A61A1E616D74009D5F42 /* FindPasswordViewController.xib in Resources */,
 				7F1931EE1E6E8305005E43F2 /* fresh_1.png in Resources */,
+				7FC3DFAC1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.xib in Resources */,
 				7F1931F21E6E8305005E43F2 /* load_white.png in Resources */,
 				7F9F50B41E49CB2F0051E029 /* LoginViewController.xib in Resources */,
 				7F1931F11E6E8305005E43F2 /* load.png in Resources */,
@@ -875,6 +982,7 @@
 				7FE7A6141E61689D009D5F42 /* TransformOperators.swift in Sources */,
 				7FE7A6C91E680F49009D5F42 /* UIScrollView+MJRefresh.m in Sources */,
 				7F1931FD1E713FB5005E43F2 /* BannerTableViewCell.swift in Sources */,
+				7FAF77EA1EA9E40600894773 /* YLMenuViewCell.swift in Sources */,
 				7FE7A6BC1E680F49009D5F42 /* MJRefreshAutoGifFooter.m in Sources */,
 				7FE7A6C41E680F49009D5F42 /* MJRefreshStateHeader.m in Sources */,
 				7FE7A6B71E680F49009D5F42 /* MJRefreshAutoFooter.m in Sources */,
@@ -889,14 +997,19 @@
 				7FE7A6121E61689D009D5F42 /* ToJSON.swift in Sources */,
 				7FE7A6081E61689D009D5F42 /* ImmutableMappable.swift in Sources */,
 				7FE7A6CA1E680F49009D5F42 /* UIView+MJExtension.m in Sources */,
+				7F317CD51EADDDD700827F17 /* TeachingCenterTableViewCell.swift in Sources */,
 				7FE7A60B1E61689D009D5F42 /* ISO8601DateTransform.swift in Sources */,
+				7FAF77E61EA9E40600894773 /* YLCycleCell.swift in Sources */,
 				7FE7A6C11E680F49009D5F42 /* MJRefreshBackStateFooter.m in Sources */,
 				7FE7A6B81E680F49009D5F42 /* MJRefreshBackFooter.m in Sources */,
+				7FAF77E81EA9E40600894773 /* YLMenuView.swift in Sources */,
 				7FE7A6111E61689D009D5F42 /* Operators.swift in Sources */,
 				7FE7A6281E63D2CB009D5F42 /* MedicalRecordViewController.swift in Sources */,
+				7FC3DFAF1EAD91F30063968E /* SettingWelcomeTableViewCell.swift in Sources */,
 				7FE7A6C21E680F49009D5F42 /* MJRefreshGifHeader.m in Sources */,
+				7FAF77EC1EA9E40600894773 /* YLMenuViewSubCell.swift in Sources */,
 				7FEA982A1E77DA3E0078E0AA /* PatientManagerListTableViewCell.swift in Sources */,
-				7FA2F95C1E5584B300FC6671 /* MainTableViewController.swift in Sources */,
+				7FAF77EE1EA9E40600894773 /* YLSinglerowView.swift in Sources */,
 				7F5ED5021E6D03FF005000A2 /* WorkStudioListTableViewCell.swift in Sources */,
 				7FE7A60D1E61689D009D5F42 /* MapError.swift in Sources */,
 				7FE7A61D1E63D0EA009D5F42 /* RegisterViewController.swift in Sources */,
@@ -904,17 +1017,19 @@
 				7FE7A5E31E616215009D5F42 /* UserManager.swift in Sources */,
 				7FE7A6021E61689D009D5F42 /* DateTransform.swift in Sources */,
 				7FE7A62C1E63D2FB009D5F42 /* MineViewController.swift in Sources */,
-				7F1931FF1E714206005E43F2 /* BannerCollectionViewCell.swift in Sources */,
 				7FE7A6261E63D2A7009D5F42 /* PatientManagerViewController.swift in Sources */,
 				7FE7A6C81E680F49009D5F42 /* UIScrollView+MJExtension.m in Sources */,
 				7F1931E71E6E54BF005E43F2 /* CustomLabel.swift in Sources */,
 				7FE7A6051E61689D009D5F42 /* EnumTransform.swift in Sources */,
 				7FE7A60F1E61689D009D5F42 /* Mapper.swift in Sources */,
 				7FE7A6041E61689D009D5F42 /* EnumOperators.swift in Sources */,
+				7F317CD11EADD6BE00827F17 /* TeachingCenterViewController.swift in Sources */,
+				7FC3DFA61EAD8EDC0063968E /* SettingViewController.swift in Sources */,
 				7FE7A6D01E691BEB009D5F42 /* MineVerityfyTableViewCell.swift in Sources */,
 				7FE7A60A1E61689D009D5F42 /* IntegerOperators.swift in Sources */,
 				7FE7A6001E61689D009D5F42 /* DataTransform.swift in Sources */,
 				7FE7A6CC1E681A5F009D5F42 /* MineInfoTableViewCell.swift in Sources */,
+				7FAF77E71EA9E40600894773 /* YLCycleView.swift in Sources */,
 				7FA2F9601E55857C00FC6671 /* RequestManager.swift in Sources */,
 				7FE7A6C01E680F49009D5F42 /* MJRefreshBackNormalFooter.m in Sources */,
 				7F0719A01E8256310097FED6 /* MedicalNoNamedTableViewCell.swift in Sources */,
@@ -927,6 +1042,7 @@
 				7FE7A6C71E680F49009D5F42 /* NSBundle+MJRefresh.m in Sources */,
 				7FE7A6101E61689D009D5F42 /* NSDecimalNumberTransform.swift in Sources */,
 				7FEA98241E77D30C0078E0AA /* ArticleViewController.swift in Sources */,
+				7FC3DFAB1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.swift in Sources */,
 				7FE7A60C1E61689D009D5F42 /* Map.swift in Sources */,
 				7FF620931E49A8AB00AC6F40 /* LuanchViewManager.swift in Sources */,
 				7F9F50B31E49CB2F0051E029 /* LoginViewController.swift in Sources */,
@@ -1120,6 +1236,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 3A4DMS5357;
+				ENABLE_BITCODE = YES;
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/Pods/MBProgressHUD",
+					"${SRCROOT}/WorkingRoomActivityCell",
+				);
 				INFOPLIST_FILE = TCMManager_SwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.helijuan.TCMManager.TCMManager-SwiftTests";
@@ -1135,6 +1256,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 3A4DMS5357;
+				ENABLE_BITCODE = YES;
+				HEADER_SEARCH_PATHS = (
+					"${SRCROOT}/Pods/MBProgressHUD",
+					"${SRCROOT}/WorkingRoomActivityCell",
+				);
 				INFOPLIST_FILE = TCMManager_SwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.helijuan.TCMManager.TCMManager-SwiftTests";

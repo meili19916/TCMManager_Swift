@@ -31,42 +31,21 @@ class LoginUserModel:Mappable {
     var assistantAvatarUrl:String = "" //助手头像
     var assistantUserName:String? //助手名字
     var assistantRemark:String? //助手备注
-    var phone:String?//用户手机号
-    var password:String? //用户密码
-    var isLogout:String? //是否已退出
-    var myMoney:String? //用户资产
-    var unApproveMoney:String? //助手头像
-    var myMoneyOriginal:String? //助手名字
-    var unApproveMoneyOriginal:String? //助手备注
-    var isShowNotifyHead:String? //助手头像
-    var doctorDetials:String? //助手名字
-    var appConstValueArray:String? //助手备注
-    var currentUploadConsiliaId:String? //助手名字
-    var currentEditConsiliaId:String? //助手备注var assistantId:String?
-    var isUpload:String? //助手头像
-    var isStopUpload:String? //助手名字
-    var maunalToUpload:String? //助手备注
-//    @property (nonatomic, strong) NSString <Optional>*unApproveMoney;//为认证医生体现金额
-//    @property (nonatomic,strong) NSString <Optional>*myMoneyOriginal;//所有余额
-//    @property (nonatomic,strong) NSString <Optional>*unApproveMoneyOriginal;//未认证通过的余额
-//    @property (nonatomic,strong) NSNumber <Optional>*isShowNotifyHead;//判断是否进行头像点击提示界面（no为显示，yes不显示）
-//    @property (nonatomic,strong) DoctorDetailsData <Optional>*doctorDetials;//医生详情
-//    @property (nonatomic,strong) NSArray <Optional,GetAppConstantListData>*appConstValueArray;//应用常量
-//    @property (nonatomic,strong) NSString <Optional>*currentUploadConsiliaId;//当前正在上传的病案的consiliaId
-//    @property (nonatomic,strong) NSString <Optional>*currentEditConsiliaId;//当前正在编辑的病案的consiliaId
-//    @property (nonatomic,strong) NSNumber <Optional>*isUpload;//是否正在上传
-//    @property (nonatomic ,strong) NSNumber <Optional> *isStopUpload;//是否停止上传
-//    @property (nonatomic,strong) NSNumber <Optional> *maunalToUpload;//手动上传
-
-//    @property (nonatomic,strong) NSString <Optional>*subscriptionPrice;//预约门诊默认价格
-//    @property (nonatomic, copy) NSString <Optional>*prescriptionOfficeVisit;//处方预约默认门诊费
-//    @property (nonatomic,strong) NSString <Optional>*subscriptionTimeSpace;//预约默认时间间隔
-//    @property (nonatomic,strong) NSString <Optional>*patientNotifyTimeSpace;//处方病人提醒默认时间间隔
-//    @property (nonatomic,strong) NSString <Optional>*electronicPatientNotifyTimeSpace;//电子处方病人提醒默认时间间隔
-//    @property (nonatomic, strong) NSString <Optional>*electronicPrescriptionPrice;//处方预约默认门诊费
-//    @property (nonatomic, strong)  NSNumber <Optional>*electronicPrescriptionNotifySelected;//电子处方是否选择提醒天数
-//    @property (nonatomic, strong)  NSNumber <Optional>*prescriptionNotifySelected;//处方是否选择提醒天数
-//    var data:JSON?
+    var phone:String?
+    var password:String?
+    var isLogout:String?
+    var myMoney:String?
+    var unApproveMoney:String?
+    var myMoneyOriginal:String?
+    var unApproveMoneyOriginal:String?
+    var isShowNotifyHead:String?
+    var doctorDetials:DoctorDetailModel?
+    var appConstValueArray:String?
+    var currentUploadConsiliaId:String?
+    var currentEditConsiliaId:String?
+    var isUpload:Bool?
+    var isStopUpload:Bool?
+    var maunalToUpload:Int?
     required init?(map: Map) {
 
     }
@@ -98,6 +77,77 @@ class LoginUserModel:Mappable {
         isUpload    <- map["isUpload"]
         isStopUpload    <- map["isStopUpload"]
         maunalToUpload    <- map["maunalToUpload"]
+        doctorDetials    <- map["doctorDetials"]
+    }
+}
+
+class DoctorDetailModel: Mappable {
+
+    var imageOne: String?
+    var imageTwo: String?
+
+    var doctorId: String?
+    var doctorIdentity: String?
+    var name: String?
+    var title: String?
+    var phone: String?
+    var province: String?
+    var city: String?
+    var county: String?
+    var street: String?
+    var provinceId: String?
+    var cityId: String?
+    var countyId: String?
+    var sex: Int?
+    var level: Int?
+    var birthday: String?
+    var remark: String?
+    var education: String?
+    var achievement: String?
+    var status: Int?
+    var avatarUrl: String?
+    var qrcodeUrl: String?
+    var diseaseChoosedCount: Int?
+    var diseaseAllCount: Int?
+    var diseaseNameList: Array<String>?
+    var approveContent: String?
+    var number: Int?
+    var patientAddAgree: Int?
+    var userAddMessage: String?
+
+    required init?(map: Map) {
+    }
+
+    func mapping(map: Map) {
+        doctorId    <- map["doctorId"]
+        doctorIdentity         <- map["doctorIdentity"]
+        name         <- map["name"]
+        phone    <- map["phone"]
+        title         <- map["title"]
+        province         <- map["province"]
+        city    <- map["city"]
+        county         <- map["county"]
+        street         <- map["street"]
+        provinceId    <- map["provinceId"]
+        cityId         <- map["cityId"]
+        countyId         <- map["countyId"]
+        sex    <- map["sex"]
+        level         <- map["level"]
+        birthday         <- map["birthday"]
+        doctorId    <- map["captcha"]
+        remark         <- map["remark"]
+        education         <- map["education"]
+        achievement    <- map["achievement"]
+        status         <- map["status"]
+        avatarUrl         <- map["avatarUrl"]
+        qrcodeUrl         <- map["qrcodeUrl"]
+        diseaseChoosedCount         <- map["diseaseChoosedCount"]
+        diseaseAllCount    <- map["diseaseAllCount"]
+        diseaseNameList         <- map["diseaseNameList"]
+        approveContent         <- map["approveContent"]
+        number    <- map["number"]
+        patientAddAgree         <- map["patientAddAgree"]
+        userAddMessage         <- map["userAddMessage"]
     }
 }
 
@@ -230,6 +280,56 @@ class MedicalRecordListModel: Mappable {
         diagnosis         <- map["diagnosis"]
         createDate    <- map["createDate"]
         diagnosisDate    <- map["diagnosisDate"]
+    }
+}
+
+//MARK:获取患教中心model
+class TeachingCenterListModel: Mappable {
+
+    var dynamicsId: String?
+    var title: String?
+    var images: Array<String>?
+    var content: String?
+    var agreeCount: Int?
+    var viewCount: Int?
+    var createDate: Double?
+    var type: Int?
+    var remark: String?
+    var commentList: Array<TeachingCenterCommentModel>?
+
+    required init?(map: Map) {
+    }
+    func mapping(map: Map) {
+        dynamicsId    <- map["dynamicsId"]
+        title         <- map["title"]
+        images         <- map["images"]
+        content    <- map["content"]
+        agreeCount    <- map["agreeCount"]
+        viewCount         <- map["viewCount"]
+        createDate    <- map["createDate"]
+        type    <- map["type"]
+        remark    <- map["remark"]
+        commentList    <- map["commentList"]
+    }
+}
+
+class TeachingCenterCommentModel: Mappable {
+    var commentId: String?
+    var content: String?
+    var name: String?
+    var avatarUrl: String?
+    var type: Int?
+    var createDate: Double?
+
+    required init?(map: Map) {
+    }
+    func mapping(map: Map) {
+        commentId    <- map["commentId"]
+        content         <- map["content"]
+        name         <- map["name"]
+        avatarUrl    <- map["avatarUrl"]
+        type    <- map["type"]
+        createDate    <- map["createDate"]
     }
 }
 

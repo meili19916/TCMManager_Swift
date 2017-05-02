@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,BannerCellDelegate {
     var dataArray:Array<CourseMicroClassModel> = []
     var activityArray:Array<ActivityListModel> = []
 
@@ -24,7 +24,8 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.headRefresh))
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(WorkStudioViewController.footerRefresh))
         self.headRefresh()
-
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -47,8 +48,8 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
             if activityArray.count > 0 {
                 if indexPath.row == 0  {
                     let cell:BannerTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CollectionCell", for: indexPath) as! BannerTableViewCell
-                    cell.activityArray = activityArray
-                    cell.beginScroll()
+                    cell.setImageArray(array: activityArray)
+                    cell.delegate = self
                     return cell
                 }else if indexPath.row == 1  {
                     let cell:WorkStudioItemTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ItemCell", for: indexPath) as! WorkStudioItemTableViewCell
@@ -102,7 +103,7 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
 
     func getActivityListData() -> Void {
               RequestManager.getActivityList(showType: 2, complete: { (result) in
-//                self.activityArray = (result as! Array<ActivityListModel>?)!
+                self.activityArray = (result as! Array<ActivityListModel>?)!
                 self.tableView.reloadData()
               }) { (result) in
 
@@ -124,6 +125,20 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
         self.tableView.mj_footer.endRefreshing()
     }
 
+    func clickedBannerView(selectedIndex index: Int){
+        let model = activityArray[index]
+        let vc = ArticleViewController()
+        vc.title = model.shareTitle
+         vc.url = PRE_URL.appending("/web/get-activity-detail?activityId=").appending(model.activityId!)
+        if (model.addIsMingyiApp == 1) {
+            vc.url = vc.url?.appending("&isMingyiApp=1")
+        }
+        if (model.addDoctorId == 1) {
+            vc.url = vc.url?.appending("&doctorId=").appending((UserManager.sharedInstance.currentUser?.doctorId)!)
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     @IBAction func tapMicroClass(_ sender: Any) {
         print("micr")
 
@@ -134,8 +149,8 @@ class WorkStudioViewController: UIViewController,UITableViewDelegate,UITableView
     }
 
     @IBAction func clickTeachingButton(_ sender: Any) {
-        print("clickTeachingButton")
 
+        self.navigationController?.pushViewController(TeachingCenterViewController(), animated: true)
     }
 
     @IBAction func clickSitButton(_ sender: Any) {

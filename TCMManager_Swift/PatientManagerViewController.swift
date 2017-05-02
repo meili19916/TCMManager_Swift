@@ -67,7 +67,6 @@ class PatientManagerViewController: UIViewController,UITableViewDelegate,UITable
         cell.timeLabel.text = date.formateDate()
         return cell
     }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

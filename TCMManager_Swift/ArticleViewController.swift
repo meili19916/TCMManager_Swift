@@ -9,14 +9,25 @@
 import UIKit
 
 class ArticleViewController: UIViewController,UIWebViewDelegate {
+    var url:String?
 
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.title = "文章"
-        webView.loadRequest(NSURLRequest(url: NSURL(string: "https://mp.weixin.qq.com/s/qXLwXDnfesKe7nNiYJRIJw")! as URL) as URLRequest)
+        if url == nil {
+            self.title = "文章"
+            url = "https://mp.weixin.qq.com/s/qXLwXDnfesKe7nNiYJRIJw"
+        }
+        webView.loadRequest(URLRequest.init(url: URL.init(string: url!)!))
+
         // Do any additional setup after loading the view.
+    }
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        MBProgressHUDManager.sharedInstance.show(type:.Loading,text:nil, detailText:nil,onView: self.view)
+    }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        MBProgressHUDManager.sharedInstance.dissmiss()
     }
 
     override func didReceiveMemoryWarning() {

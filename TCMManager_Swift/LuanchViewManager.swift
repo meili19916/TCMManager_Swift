@@ -18,20 +18,21 @@ class LuanchViewManager: NSObject {
         navigationVC?.navigationBar.addSubview(lineView)
         navigationVC?.view.backgroundColor = UIColor.white
         navigationVC?.navigationBar.barTintColor = UIColor.white
-
-        var backImage = UIImage.init(named: "backarrowhead")
-        backImage = backImage?.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 36, 0, 0))
-        UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImage, for: UIControlState.normal, barMetrics: UIBarMetrics.default)
+        let item = UIBarButtonItem(title: "  ", style: .plain, target: self, action: nil)
+        navigationVC?.navigationItem.backBarButtonItem = item
+//        var backImage = UIImage.init(named: "backarrowhead")
+//        backImage = backImage?.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 36, 0, 0))
+//        UIBarButtonItem.appearance().setBackButtonBackgroundImage(backImage, for: UIControlState.normal, barMetrics: UIBarMetrics.default)
         navigationVC?.navigationBar.tintColor = TextColor
         navigationVC?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : TextColor]
-        UIBarButtonItem.appearance().backButtonTitlePositionAdjustment(for:UIBarMetrics.default)
+//        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -160), for:UIBarMetrics.default)
     }
 
     func showView(window:UIWindow?, navigationVC:UINavigationController?) -> Void {
         if self.isFirstLaunchOrUpdateApp() {
             self.showGuideView(window: window, navigationVC: navigationVC)
         }else{
-            if (UserManager.sharedInstance.currentUser != nil){
+            if (UserManager.sharedInstance.currentUser != nil && UserManager.sharedInstance.currentUser?.token != nil){
                 self.showTabView(window: window, navigationVC: navigationVC)
             }else{
                 self.showLoginView(window: window, navigationVC: navigationVC)
@@ -52,6 +53,7 @@ class LuanchViewManager: NSObject {
         navigationVC?.pushViewController(vc, animated: true)
         window?.rootViewController = navigationVC
     }
+
     func showTabView(window:UIWindow?, navigationVC:UINavigationController?) -> Void {
         let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
         let mainTabVC = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController")

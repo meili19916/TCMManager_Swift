@@ -13,7 +13,13 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true;
+        RequestManager.getDoctorDetail(complete: { (result) in
+            UserManager.sharedInstance.currentUser?.doctorDetials = Mapper<DoctorDetailModel>().map(JSONString: (result as? String)!)
+            UserDefaults.standard.set( UserManager.sharedInstance.currentUser?.toJSONString(), forKey: "userModel")
+            UserDefaults.standard.synchronize()
+        }) { (result) in
 
+        }
         // Do any additional setup after loading the view.
     }
 

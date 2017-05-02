@@ -131,6 +131,8 @@ class NetWorkingManager: NSObject {
                 completeHandler((.TokenOutDate,baseModel["errorMessage"].stringValue))
             }else if (errorCode ==  RequestStatusCode.TokenNoEffect.rawValue){
                 completeHandler((.TokenNoEffect,baseModel["errorMessage"].stringValue))
+            }else{
+                completeHandler((.Failed,baseModel["errorMessage"]))
             }
         case .failure(let error):
             completeHandler((.Failed,error))

@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
         MBProgressHUDManager.sharedInstance.show(type:.Loading,text:nil, detailText:nil,onView: self.view)
         RequestManager.login(phone:phoneTextField.text!,password:passwordPhoneTextField.text!,complete:{result in
             MBProgressHUDManager.sharedInstance.dissmiss()
+            
             let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
             let mainTabVC = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController")
             self.navigationController?.pushViewController(mainTabVC, animated: true)

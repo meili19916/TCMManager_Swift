@@ -6,6 +6,7 @@
 //  Copyright © 2017年 HeLijuan. All rights reserved.
 //
 import Foundation
+
 extension String {
     var md5: String! {
         let str = self.cString(using: String.Encoding.utf8)
@@ -205,6 +206,20 @@ extension Date{
         let formatter = DateFormatter.init()
         formatter.dateFormat = format
        return  formatter.string(from: date)
+    }
+}
+
+extension UILabel{
+    func setMutableAttributedLineSpace(lineSpace:CGFloat) -> Void {
+        if self.attributedText != nil {
+//            let style = NSMutableParagraphStyle.init()
+//            style.lineSpacing = lineSpace
+//            self.attributedText.at
+//
+//            NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+//            [style setLineSpacing:lineSpacing];
+//            [attStr addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0,attStr.length)];
+        }
     }
 }
 

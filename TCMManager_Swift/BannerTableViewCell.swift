@@ -7,73 +7,36 @@
 //
 
 import UIKit
-
-class BannerTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    var timer:Timer?
-    var activityArray:Array<ActivityListModel> = []
-
+protocol BannerCellDelegate : class {
+    func clickedBannerView(selectedIndex index: Int)
+}
+class BannerTableViewCell: UITableViewCell,YLCycleViewDelegate {
+    var bannerView:YLCycleView?
+    weak var delegate : BannerCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = UITableViewCellSelectionStyle.none
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        flowLayout.itemSize = CGSize.init(width: ScreenWidth, height: 100)
-        collectionView.showsHorizontalScrollIndicator = false
+        bannerView?.backgroundColor = UIColor.white
         // Initialization code
     }
 
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return activityArray.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath as IndexPath) as! BannerCollectionViewCell
-        cell.bannerImageView.setImageUrl(url: activityArray[indexPath.row].imageUrl)
-        return cell
-    }
-
-  public  func beginScroll() -> Void {
-        self.pageControl.numberOfPages = self.activityArray.count
-        self.collectionView.reloadData()
-        self.addTimer()
-    }
-
-    func changePage() -> Void {
-        pageControl.currentPage = pageControl.currentPage + 1
-        if pageControl.currentPage == activityArray.count - 1 {
-            pageControl.currentPage = 0
+    func setImageArray(array:Array<ActivityListModel>) -> Void {
+        var images: Array<String> = Array.init()
+        for model in array {
+            images.append(model.imageUrl)
         }
-        collectionView.scrollToItem(at: IndexPath.init(row: pageControl.currentPage, section: 0), at: .left, animated: true)
+        let titles = ["Raindew","无限轮播", "QQ群：511860085", "欢迎加入", "帅的人已经Star"]
+       bannerView  = YLCycleView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 100), images: images, titles: titles)
+        bannerView?.delegate = self
+        self.addSubview(bannerView!)
+    }
+    func clickedCycleView(_ cycleView: YLCycleView, selectedIndex index: Int) {
+        if (delegate != nil) {
+            delegate?.clickedBannerView(selectedIndex: index)
+        }
     }
 
-    func removeTimer(){
-        self.timer?.invalidate()
-    }
-
-    func addTimer(){
-        self.timer = Timer.scheduledTimer(timeInterval: 2,
-                                          target:self,selector:#selector(BannerTableViewCell.changePage),
-                                          userInfo:nil,repeats:true)
-    }
-
-    //  重新添加定时器
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        self.addTimer()
-    }
-    // 手动滑动的时候销毁定时器
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.removeTimer()
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
+       override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

@@ -105,6 +105,9 @@ class MineViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == (dataArray?.count)! - 1 && indexPath.row == 1 {
+            self.navigationController?.pushViewController(SettingViewController(), animated: true)
+        }
         
     }
 

@@ -42,6 +42,7 @@ class RequestManager: NSObject {
                 loginModel?.password = password
                 UserDefaults.standard.set(loginModel?.toJSONString(), forKey: "userModel")
                 UserDefaults.standard.synchronize()
+                UserManager.sharedInstance.currentUser = loginModel;
                 complete(loginModel)
             }else{
                 failed(data)
@@ -95,8 +96,6 @@ class RequestManager: NSObject {
             }
         }
     }
-
-
     //MARK:工作室
     static func getCourseAndMicroclassList(pageIndex:Int,pageSize:Int,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
         let params:Dictionary<String,Any> = ["pageIndex":String(pageIndex),"pageSize":String(pageSize),"token":UserManager.sharedInstance.currentUser?.token ?? ""]
@@ -148,4 +147,42 @@ class RequestManager: NSObject {
             }
         }
     }
+
+    static func getDoctorDetail(complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
+        let params:Dictionary<String,Any> = ["token":UserManager.sharedInstance.currentUser?.token ?? ""]
+        NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/get-doctor-info"), params: params) { (data) in
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
+                    complete(data.1)
+            }else{
+                failed(data)
+            }
+        }
+    }
+
+    static func logout(complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
+        let params:Dictionary<String,Any> = ["token":UserManager.sharedInstance.currentUser?.token ?? ""]
+        NetWorkingManager.sharedInstance.post(url: PRE_URL.appending("/common/logout"), params: params) { (data) in
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
+                complete(data.1)
+            }else{
+                failed(data)
+            }
+        }
+    }
+
+    static func getTeachingCenterList(page:Int,complete:@escaping RequestSuccessClosure,failed:@escaping RequestFailedClosure) -> Void{
+        var params:Dictionary<String,Any> = ["token":UserManager.sharedInstance.currentUser?.token ?? ""]
+        params["page"] = String(page)
+        params["pageSize"] = String(PerPageTwentyCount)
+        NetWorkingManager.sharedInstance.get(url: PRE_URL.appending("/common/get-doctor-dynamics-list"), params: params) { (data) in
+            if data.0.rawValue == RequestStatusCode.Success.rawValue {
+                let jsonData = Mapper<TeachingCenterListModel>().mapArray(JSONString: data.1 as! String)
+                complete(jsonData)
+            }else{
+                failed(data)
+            }
+        }
+    }
 }
+
+

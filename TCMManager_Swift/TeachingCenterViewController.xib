@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeachingCenterViewController" customModule="TCMManager_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="Aly-5h-weP" id="hsX-0o-4L6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="329" height="512"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ht-Te-TcU">
+                    <rect key="frame" x="0.0" y="68" width="110" height="40"/>
+                    <color key="backgroundColor" red="0.98039215803146362" green="0.98039215803146362" blue="0.98039215803146362" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="oIh-9w-IBU"/>
+                    </constraints>
+                    <state key="normal" title="发短文" image="发患教">
+                        <color key="titleColor" red="0.13333334029999999" green="0.13333334029999999" blue="0.13333334029999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sendShortArticle:" destination="-1" eventType="touchUpInside" id="Nk6-8j-dDS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5g2-Ty-aqP">
+                    <rect key="frame" x="110" y="68" width="110" height="40"/>
+                    <color key="backgroundColor" red="0.98039215803146362" green="0.98039215803146362" blue="0.98039215803146362" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="粘贴链接" image="粘贴链接">
+                        <color key="titleColor" red="0.13333334029999999" green="0.13333334029999999" blue="0.13333334029999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pasteLink:" destination="-1" eventType="touchUpInside" id="agq-wf-T2V"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iar-08-Lt1">
+                    <rect key="frame" x="219" y="68" width="110" height="40"/>
+                    <color key="backgroundColor" red="0.98039215803146362" green="0.98039215803146362" blue="0.98039215803146362" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="患教库" image="患教库">
+                        <color key="titleColor" red="0.13333334029999999" green="0.13333334029999999" blue="0.13333334029999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="teachingLibrary:" destination="-1" eventType="touchUpInside" id="c2j-Vx-2Yl"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aly-5h-weP">
+                    <rect key="frame" x="0.0" y="109" width="329" height="403"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Y2z-rC-dXS"/>
+                        <outlet property="delegate" destination="-1" id="AHt-ir-NOg"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.94509804248809814" green="0.94509804248809814" blue="0.94509804248809814" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Iar-08-Lt1" firstAttribute="width" secondItem="2ht-Te-TcU" secondAttribute="width" id="CgI-Ij-UIf"/>
+                <constraint firstItem="Aly-5h-weP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PgR-Ww-hht"/>
+                <constraint firstItem="5g2-Ty-aqP" firstAttribute="top" secondItem="2ht-Te-TcU" secondAttribute="top" id="Qz2-SO-FL7"/>
+                <constraint firstItem="Iar-08-Lt1" firstAttribute="top" secondItem="2ht-Te-TcU" secondAttribute="top" id="T28-iz-iMK"/>
+                <constraint firstItem="2ht-Te-TcU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="68" id="bXu-ln-alk"/>
+                <constraint firstItem="Aly-5h-weP" firstAttribute="top" secondItem="2ht-Te-TcU" secondAttribute="bottom" constant="1" id="bgn-6K-ouK"/>
+                <constraint firstAttribute="bottom" secondItem="Aly-5h-weP" secondAttribute="bottom" id="dvd-Mb-who"/>
+                <constraint firstItem="2ht-Te-TcU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:3" id="fbJ-SE-9Fv"/>
+                <constraint firstItem="2ht-Te-TcU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="i54-dD-5BI"/>
+                <constraint firstItem="5g2-Ty-aqP" firstAttribute="width" secondItem="2ht-Te-TcU" secondAttribute="width" id="kcW-Kz-QGb"/>
+                <constraint firstItem="5g2-Ty-aqP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mL9-ZZ-8Oc"/>
+                <constraint firstAttribute="trailing" secondItem="Iar-08-Lt1" secondAttribute="trailing" id="mSz-ky-NEp"/>
+                <constraint firstItem="5g2-Ty-aqP" firstAttribute="height" secondItem="2ht-Te-TcU" secondAttribute="height" id="n1c-LU-pa1"/>
+                <constraint firstItem="Iar-08-Lt1" firstAttribute="height" secondItem="2ht-Te-TcU" secondAttribute="height" id="tTy-bb-0lw"/>
+                <constraint firstAttribute="trailing" secondItem="Aly-5h-weP" secondAttribute="trailing" id="vjp-67-cnp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-52.5" y="-52"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="发患教" width="20" height="20"/>
+        <image name="患教库" width="20" height="20"/>
+        <image name="粘贴链接" width="20" height="20"/>
+    </resources>
+</document>
