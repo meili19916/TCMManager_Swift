@@ -22,6 +22,9 @@
 		7F317CD21EADD6BE00827F17 /* TeachingCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F317CD01EADD6BE00827F17 /* TeachingCenterViewController.xib */; };
 		7F317CD51EADDDD700827F17 /* TeachingCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F317CD31EADDDD700827F17 /* TeachingCenterTableViewCell.swift */; };
 		7F317CD61EADDDD700827F17 /* TeachingCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F317CD41EADDDD700827F17 /* TeachingCenterTableViewCell.xib */; };
+		7F317CDE1EB8769300827F17 /* TeachingImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F317CDC1EB8769300827F17 /* TeachingImageCollectionViewCell.swift */; };
+		7F317CDF1EB8769300827F17 /* TeachingImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F317CDD1EB8769300827F17 /* TeachingImageCollectionViewCell.xib */; };
+		7F317CE11EB87A0000827F17 /* TeachingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F317CE01EB87A0000827F17 /* TeachingFlowLayout.swift */; };
 		7F5ED5001E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */; };
 		7F5ED5021E6D03FF005000A2 /* WorkStudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */; };
 		7F9F50AE1E49CA4D0051E029 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */; };
@@ -152,6 +155,9 @@
 		7F317CD01EADD6BE00827F17 /* TeachingCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachingCenterViewController.xib; sourceTree = "<group>"; };
 		7F317CD31EADDDD700827F17 /* TeachingCenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachingCenterTableViewCell.swift; sourceTree = "<group>"; };
 		7F317CD41EADDDD700827F17 /* TeachingCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachingCenterTableViewCell.xib; sourceTree = "<group>"; };
+		7F317CDC1EB8769300827F17 /* TeachingImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachingImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F317CDD1EB8769300827F17 /* TeachingImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachingImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		7F317CE01EB87A0000827F17 /* TeachingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachingFlowLayout.swift; sourceTree = "<group>"; };
 		7F5ED4FF1E6D0051005000A2 /* WorkStudioSectionItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioSectionItemTableViewCell.swift; sourceTree = "<group>"; };
 		7F5ED5011E6D03FF005000A2 /* WorkStudioListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkStudioListTableViewCell.swift; sourceTree = "<group>"; };
 		7F9F50AC1E49CA4D0051E029 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -325,12 +331,23 @@
 		7F317CCE1EADD69800827F17 /* TeachingCenter */ = {
 			isa = PBXGroup;
 			children = (
+				7F317CE21EB88CB700827F17 /* TeachingCenterViewController */,
+			);
+			name = TeachingCenter;
+			sourceTree = "<group>";
+		};
+		7F317CE21EB88CB700827F17 /* TeachingCenterViewController */ = {
+			isa = PBXGroup;
+			children = (
 				7F317CCF1EADD6BE00827F17 /* TeachingCenterViewController.swift */,
 				7F317CD01EADD6BE00827F17 /* TeachingCenterViewController.xib */,
 				7F317CD31EADDDD700827F17 /* TeachingCenterTableViewCell.swift */,
 				7F317CD41EADDDD700827F17 /* TeachingCenterTableViewCell.xib */,
+				7F317CDC1EB8769300827F17 /* TeachingImageCollectionViewCell.swift */,
+				7F317CDD1EB8769300827F17 /* TeachingImageCollectionViewCell.xib */,
+				7F317CE01EB87A0000827F17 /* TeachingFlowLayout.swift */,
 			);
-			name = TeachingCenter;
+			name = TeachingCenterViewController;
 			sourceTree = "<group>";
 		};
 		7F63A5151E824D6200218DC7 /* MedicalRecordViews */ = {
@@ -884,6 +901,7 @@
 				7FE7A61E1E63D0EA009D5F42 /* RegisterViewController.xib in Resources */,
 				7FE7A6C51E680F49009D5F42 /* MJRefresh.bundle in Resources */,
 				7FC3DFA71EAD8EDC0063968E /* SettingViewController.xib in Resources */,
+				7F317CDF1EB8769300827F17 /* TeachingImageCollectionViewCell.xib in Resources */,
 				7F9F50AF1E49CA4D0051E029 /* GuideViewController.xib in Resources */,
 				7FAF77E91EA9E40600894773 /* YLMenuView.xib in Resources */,
 				7FAF77ED1EA9E40600894773 /* YLMenuViewSubCell.xib in Resources */,
@@ -985,6 +1003,7 @@
 				7FAF77EA1EA9E40600894773 /* YLMenuViewCell.swift in Sources */,
 				7FE7A6BC1E680F49009D5F42 /* MJRefreshAutoGifFooter.m in Sources */,
 				7FE7A6C41E680F49009D5F42 /* MJRefreshStateHeader.m in Sources */,
+				7F317CDE1EB8769300827F17 /* TeachingImageCollectionViewCell.swift in Sources */,
 				7FE7A6B71E680F49009D5F42 /* MJRefreshAutoFooter.m in Sources */,
 				7F070D3F1E4AC4F9005A2F52 /* NetWorkingManager.swift in Sources */,
 				7FE7A5FF1E61689D009D5F42 /* CustomDateFormatTransform.swift in Sources */,
@@ -1045,6 +1064,7 @@
 				7FC3DFAB1EAD8FFB0063968E /* SettingWithSwitchTableViewCell.swift in Sources */,
 				7FE7A60C1E61689D009D5F42 /* Map.swift in Sources */,
 				7FF620931E49A8AB00AC6F40 /* LuanchViewManager.swift in Sources */,
+				7F317CE11EB87A0000827F17 /* TeachingFlowLayout.swift in Sources */,
 				7F9F50B31E49CB2F0051E029 /* LoginViewController.swift in Sources */,
 				7FE7A6161E61689D009D5F42 /* URLTransform.swift in Sources */,
 				7FE7A62A1E63D2E1009D5F42 /* WorkStudioViewController.swift in Sources */,

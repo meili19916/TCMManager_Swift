@@ -45,7 +45,7 @@ class TeachingCenterViewController: UIViewController,UITableViewDelegate,UITable
 
     func getData() -> Void {
         RequestManager.getTeachingCenterList(page: pageIndex, complete: { (result) in
-
+            if result != nil{
             if self.pageIndex == 1 {
                 self.dataArray = (result as! Array<TeachingCenterListModel>?)!
             }else{
@@ -55,6 +55,7 @@ class TeachingCenterViewController: UIViewController,UITableViewDelegate,UITable
                 }else{
                     self.pageIndex = self.pageIndex - 1
                 }
+            }
             }
             self.endRefresh()
             self.tableView.reloadData()
@@ -87,7 +88,6 @@ class TeachingCenterViewController: UIViewController,UITableViewDelegate,UITable
         var commentString:String = ""
         let arraylist = self.dataArray[indexPath.section].commentList
         if arraylist != nil {
-
             for data in arraylist! {
                 commentString = commentString.appending((data.name?.appending(":").appending(data.content!))!.appending("\n"))
             }
@@ -96,7 +96,12 @@ class TeachingCenterViewController: UIViewController,UITableViewDelegate,UITable
         }else{
             cell.messageLabel.text = nil
         }
+        cell.updateCollectionView(imagesArray:self.dataArray[indexPath.section].images)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 
     @IBAction func teachingLibrary(_ sender: Any) {
